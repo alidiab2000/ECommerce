@@ -1,5 +1,5 @@
-import 'package:e_commerce/Feature/auth/views/commen_widget/custom_form_field.dart';
-import 'package:e_commerce/core/utils/common/app_router.dart';
+import 'package:e_commerce/core/utils/common/widgets/login_sigup/commen_widget/custom_form_field.dart';
+import 'package:e_commerce/core/utils/common/routes/app_router.dart';
 import 'package:e_commerce/core/utils/constants/sizes.dart';
 import 'package:e_commerce/core/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';

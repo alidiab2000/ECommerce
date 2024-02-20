@@ -1,4 +1,4 @@
-import 'package:e_commerce/core/utils/common/app_router.dart';
+import 'package:e_commerce/core/utils/common/routes/app_router.dart';
 import 'Feature/auth/views/onBorading/onborading.dart';
 import 'core/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +11,7 @@ class ECommerce extends StatelessWidget {
     return GetMaterialApp(
       title: 'ECommerce App',
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoute.root,
+      initialRoute: AppRoute.navigationMenuPath,
       getPages: AppRoute.routes,
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,

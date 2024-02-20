@@ -1,7 +1,7 @@
-import 'package:e_commerce/core/utils/common/app_router.dart';
+import 'package:e_commerce/core/utils/common/routes/app_router.dart';
 import 'package:get/get.dart';
-import '../../commen_widget/custom_form_field.dart';
-import '../../commen_widget/social_media_buttons.dart';
+import '../../../../../core/utils/common/widgets/login_sigup/commen_widget/custom_form_field.dart';
+import '../../../../../core/utils/common/widgets/login_sigup/commen_widget/social_media_buttons.dart';
 import '../../login/widgets/loing_form_divider.dart';
 import 'agreement.dart';
 import 'first_last_form_field.dart';

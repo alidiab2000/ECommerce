@@ -1,4 +1,4 @@
-import 'package:e_commerce/core/utils/common/app_router.dart';
+import 'package:e_commerce/core/utils/common/routes/app_router.dart';
 import 'package:e_commerce/core/utils/constants/image_strings.dart';
 import 'package:e_commerce/core/utils/constants/sizes.dart';
 import 'package:e_commerce/core/utils/constants/text_strings.dart';

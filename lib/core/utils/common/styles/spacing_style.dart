@@ -1,4 +1,4 @@
-import '../constants/sizes.dart';
+import '../../constants/sizes.dart';
 import 'package:flutter/painting.dart';
 
 class SpacingStyle {

@@ -1,5 +1,5 @@
-import 'package:e_commerce/core/utils/common/app_router.dart';
-import '../../commen_widget/custom_form_field.dart';
+import 'package:e_commerce/core/utils/common/routes/app_router.dart';
+import '../../../../../core/utils/common/widgets/login_sigup/commen_widget/custom_form_field.dart';
 import '../../register/register.dart';
 import '../../../../../core/utils/constants/sizes.dart';
 import '../../../../../core/utils/constants/text_strings.dart';
@@ -73,7 +73,9 @@ class LoginForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () => Get.offAllNamed(
+                AppRoute.navigationMenuPath,
+              ),
               child: const Text(
                 AppTexts.signIn,
               ),
