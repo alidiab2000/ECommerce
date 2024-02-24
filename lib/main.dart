@@ -2,11 +2,11 @@ import 'app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  //TODO : Add Widget binding
-  //TODO : Init Local Storage
-  //TODO : Initialize FireBase
-  //TODO : Initialize Authenication
-  //TODO : Await Native Splash
+  //ToDo : Add Widget binding
+  //ToDo : Init Local Storage
+  //ToDo : Initialize FireBase
+  //ToDo : Initialize Authenication
+  //ToDo : Await Native Splash
 
   runApp(const ECommerce());
 }

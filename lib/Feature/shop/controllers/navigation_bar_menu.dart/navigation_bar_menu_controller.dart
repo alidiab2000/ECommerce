@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../views/home/home_view.dart';
+import '../../views/home/home_view.dart';
 
 class NavigationMenuController extends GetxController {
   final selectedIndex = 0.obs;

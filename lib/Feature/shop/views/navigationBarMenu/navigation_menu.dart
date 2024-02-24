@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../controllers/navigation_bar_menu_controller.dart';
+import '../../controllers/navigation_bar_menu.dart/navigation_bar_menu_controller.dart';
 
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
