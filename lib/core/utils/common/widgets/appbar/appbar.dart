@@ -1,5 +1,5 @@
-import 'package:e_commerce/core/utils/constants/sizes.dart';
-import 'package:e_commerce/core/utils/device/device_utility.dart';
+import '../../../constants/sizes.dart';
+import '../../../device/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';

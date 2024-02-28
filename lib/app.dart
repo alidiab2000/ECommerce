@@ -1,4 +1,4 @@
-import 'package:e_commerce/core/utils/common/routes/app_router.dart';
+import 'core/utils/common/routes/app_router.dart';
 import 'Feature/auth/views/onBorading/onborading.dart';
 import 'core/utils/theme/theme.dart';
 import 'package:flutter/material.dart';

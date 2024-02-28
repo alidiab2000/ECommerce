@@ -1,8 +1,8 @@
-import 'package:e_commerce/core/utils/common/routes/app_router.dart';
-import 'package:e_commerce/core/utils/constants/image_strings.dart';
-import 'package:e_commerce/core/utils/constants/sizes.dart';
-import 'package:e_commerce/core/utils/constants/text_strings.dart';
-import 'package:e_commerce/core/utils/helpers/helper_functions.dart';
+import '../../../../../core/utils/common/routes/app_router.dart';
+import '../../../../../core/utils/constants/image_strings.dart';
+import '../../../../../core/utils/constants/sizes.dart';
+import '../../../../../core/utils/constants/text_strings.dart';
+import '../../../../../core/utils/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

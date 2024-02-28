@@ -1,7 +1,7 @@
-import 'package:e_commerce/core/utils/common/widgets/containers/circular_container.dart';
-import 'package:e_commerce/core/utils/common/widgets/curved_edges/curved_edges.dart';
+import '../../../../../core/utils/common/widgets/containers/circular_container.dart';
+import '../../../../../core/utils/common/widgets/curved_edges/curved_edges.dart';
 import 'package:flutter/material.dart';
-import 'package:e_commerce/core/utils/constants/colors.dart';
+import '../../../../../core/utils/constants/colors.dart';
 
 class HeaderCurveEdgeContainer extends StatelessWidget {
   const HeaderCurveEdgeContainer({

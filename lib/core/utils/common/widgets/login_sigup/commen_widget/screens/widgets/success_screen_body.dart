@@ -1,9 +1,9 @@
-import 'package:e_commerce/core/utils/common/widgets/login_sigup/commen_widget/screens/widgets/functions/success_padding.dart';
-import 'package:e_commerce/core/utils/common/routes/app_router.dart';
-import 'package:e_commerce/core/utils/constants/image_strings.dart';
-import 'package:e_commerce/core/utils/constants/sizes.dart';
-import 'package:e_commerce/core/utils/constants/text_strings.dart';
-import 'package:e_commerce/core/utils/helpers/helper_functions.dart';
+import 'functions/success_padding.dart';
+import '../../../../../routes/app_router.dart';
+import '../../../../../../constants/image_strings.dart';
+import '../../../../../../constants/sizes.dart';
+import '../../../../../../constants/text_strings.dart';
+import '../../../../../../helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

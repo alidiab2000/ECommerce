@@ -1,44 +1,43 @@
+import '../../../../core/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
+import '../../../../core/utils/common/layouts/grid_view.dart';
 import '../../../../core/utils/constants/sizes.dart';
-import 'widgets/catergory_list_view.dart';
-import 'widgets/curve_edge.dart';
-import 'widgets/home_appbar.dart';
-import 'widgets/search_text_field.dart';
-import 'widgets/section_heading.dart';
+import 'widgets/header_section.dart';
+import 'widgets/product_card_vertiacl.dart';
+import 'widgets/promo_slider.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            HeaderCurveEdgeContainer(
+            //Header - AppBar - search bar
+            const HeaderSection(),
+            //Body of Home Screen
+            Padding(
+              padding: const EdgeInsets.all(CustomSizes.defaultSpace),
               child: Column(
                 children: [
-                  HomeAppBar(),
-                  SizedBox(height: CustomSizes.defaultSpace),
-                  // Search Bar
-                  SearchTextField(),
-                  // Space
-                  SizedBox(height: CustomSizes.defaultSpace),
-                  // head of home 
-                  Padding(
-                    padding: EdgeInsets.only(left: CustomSizes.defaultSpace),
-                    child: Column(
-                      children: [
-                        //  == Heading
-                        SectionHeading(),
-                        // Space
-                        SizedBox(height: CustomSizes.spaceBtwItems),
-                        // == Categories
-                        //ToDo Passing List of Catergory
-                        CatergoryListView(),
-                      ],
-                    ),
+                  const PromoSlider(
+                    banners: [
+                      AppImages.promoBanner1,
+                      AppImages.promoBanner2,
+                      AppImages.promoBanner3,
+                    ],
                   ),
+                  const SizedBox(
+                    height: CustomSizes.spaceBtwSections,
+                  ),
+                  GridLayout(
+                    itemCount: 20,
+                    crossAxisCount: 2,
+                    itemBuilder: (context, index) =>
+                        const ProductCardVertiacl(),
+                  )
                 ],
               ),
             ),

@@ -1,4 +1,4 @@
-import 'package:e_commerce/Feature/auth/views/password_configration/widgets/forget_password_body.dart';
+import 'widgets/forget_password_body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

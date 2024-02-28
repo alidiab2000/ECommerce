@@ -1,5 +1,6 @@
-import 'package:e_commerce/core/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../../../constants/sizes.dart';
 
 EdgeInsets successScreenPadding() {
   return const EdgeInsets.only(

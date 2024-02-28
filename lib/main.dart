@@ -2,7 +2,7 @@ import 'app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  //ToDo : Add Widget binding
+  //TODO : Add Widget binding
   //ToDo : Init Local Storage
   //ToDo : Initialize FireBase
   //ToDo : Initialize Authenication

@@ -1,4 +1,4 @@
-import 'package:e_commerce/core/utils/common/routes/app_router.dart';
+import '../../../../../core/utils/common/routes/app_router.dart';
 import '../../../../../core/utils/common/widgets/login_sigup/commen_widget/custom_form_field.dart';
 import '../../register/register.dart';
 import '../../../../../core/utils/constants/sizes.dart';

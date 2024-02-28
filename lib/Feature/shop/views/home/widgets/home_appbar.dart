@@ -1,8 +1,9 @@
-import 'package:e_commerce/Feature/shop/views/home/widgets/cart_counter.dart';
-import 'package:e_commerce/core/utils/common/widgets/appbar/appbar.dart';
-import 'package:e_commerce/core/utils/constants/colors.dart';
-import 'package:e_commerce/core/utils/constants/text_strings.dart';
+import '../../../../../core/utils/common/widgets/appbar/appbar.dart';
+import '../../../../../core/utils/constants/colors.dart';
+import '../../../../../core/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+
+import 'cart_counter.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({

@@ -1,12 +1,12 @@
-import 'package:e_commerce/core/utils/common/widgets/login_sigup/commen_widget/screens/success.dart';
-import 'package:e_commerce/Feature/auth/views/login/login.dart';
-import 'package:e_commerce/Feature/auth/views/onBorading/onborading.dart';
-import 'package:e_commerce/Feature/auth/views/password_configration/forget_password.dart';
-import 'package:e_commerce/Feature/auth/views/password_configration/reset_password.dart';
-import 'package:e_commerce/Feature/auth/views/register/register.dart';
-import 'package:e_commerce/Feature/auth/views/register/verify.dart';
-import 'package:e_commerce/Feature/shop/views/home/home_view.dart';
-import 'package:e_commerce/Feature/shop/views/navigationBarMenu/navigation_menu.dart';
+import '../widgets/login_sigup/commen_widget/screens/success.dart';
+import '../../../../Feature/auth/views/login/login.dart';
+import '../../../../Feature/auth/views/onBorading/onborading.dart';
+import '../../../../Feature/auth/views/password_configration/forget_password.dart';
+import '../../../../Feature/auth/views/password_configration/reset_password.dart';
+import '../../../../Feature/auth/views/register/register.dart';
+import '../../../../Feature/auth/views/register/verify.dart';
+import '../../../../Feature/shop/views/home/home_view.dart';
+import '../../../../Feature/shop/views/navigationBarMenu/navigation_menu.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRoute {

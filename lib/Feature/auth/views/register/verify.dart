@@ -1,4 +1,4 @@
-import 'package:e_commerce/Feature/auth/views/register/widgets/verify_view_body.dart';
+import 'widgets/verify_view_body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

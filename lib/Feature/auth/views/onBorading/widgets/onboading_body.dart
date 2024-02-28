@@ -1,12 +1,13 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../../../../core/utils/constants/image_strings.dart';
+import '../../../../../core/utils/constants/text_strings.dart';
 import '../../../controllers/onboarding/on_boarding_controller.dart';
 import 'onboarding_dot_naviagtoin.dart';
 import 'onboarding_next_button.dart';
 import 'onboarding_page.dart';
 import 'onboarding_skip.dart';
-import '../../../../../core/utils/constants/image_strings.dart';
-import '../../../../../core/utils/constants/text_strings.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class OnBoardingBody extends StatelessWidget {
   const OnBoardingBody({

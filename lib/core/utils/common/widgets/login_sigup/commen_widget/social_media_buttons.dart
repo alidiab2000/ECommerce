@@ -1,7 +1,8 @@
+import 'package:flutter/material.dart';
+
 import '../../../../../../Feature/auth/views/login/widgets/social_buton.dart';
 import '../../../../constants/image_strings.dart';
 import '../../../../constants/sizes.dart';
-import 'package:flutter/material.dart';
 
 class SocialMediaButtons extends StatelessWidget {
   const SocialMediaButtons({

@@ -1,4 +1,4 @@
-import 'package:e_commerce/Feature/auth/views/password_configration/widgets/rest_password_body.dart';
+import 'widgets/rest_password_body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

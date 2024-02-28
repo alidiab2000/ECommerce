@@ -1,12 +1,13 @@
-import 'lgoin_header.dart';
-import 'login_form.dart';
-import 'loing_form_divider.dart';
-import 'social_buton.dart';
+import 'package:flutter/material.dart';
+
 import '../../../../../core/utils/common/styles/spacing_style.dart';
 import '../../../../../core/utils/constants/image_strings.dart';
 import '../../../../../core/utils/constants/sizes.dart';
 import '../../../../../core/utils/constants/text_strings.dart';
-import 'package:flutter/material.dart';
+import 'lgoin_header.dart';
+import 'login_form.dart';
+import 'loing_form_divider.dart';
+import 'social_buton.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({

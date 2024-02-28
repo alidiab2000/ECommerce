@@ -1,7 +1,7 @@
-import 'package:e_commerce/core/utils/common/widgets/login_sigup/commen_widget/custom_form_field.dart';
-import 'package:e_commerce/core/utils/common/routes/app_router.dart';
-import 'package:e_commerce/core/utils/constants/sizes.dart';
-import 'package:e_commerce/core/utils/constants/text_strings.dart';
+import '../../../../../core/utils/common/widgets/login_sigup/commen_widget/custom_form_field.dart';
+import '../../../../../core/utils/common/routes/app_router.dart';
+import '../../../../../core/utils/constants/sizes.dart';
+import '../../../../../core/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';

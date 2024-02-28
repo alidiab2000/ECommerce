@@ -1,4 +1,4 @@
-import 'package:e_commerce/core/utils/constants/image_strings.dart';
+import '../../../../../core/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
