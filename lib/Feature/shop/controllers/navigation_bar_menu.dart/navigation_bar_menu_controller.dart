@@ -8,7 +8,7 @@ import '../../views/home/home_view.dart';
 class NavigationMenuController extends GetxController {
   final selectedIndex = 0.obs;
   void chanageselectedIndex(int index) => selectedIndex.value = index;
-  //TODO : Add all screens you'll create
+  //TODO : Add all screens you'll Create
   final screens = [
     const HomeView(),
     const StoreView(),

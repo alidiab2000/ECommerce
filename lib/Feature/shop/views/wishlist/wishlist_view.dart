@@ -16,7 +16,7 @@ class WishListView extends StatelessWidget {
       appBar: CustomAppBar(
         showBackArrow: false,
         title: Text(
-          'WishList',
+          'Wishlist',
           style: Theme.of(context).textTheme.headlineMedium,
         ),
         actions: [
