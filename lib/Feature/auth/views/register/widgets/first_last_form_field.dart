@@ -11,8 +11,8 @@ class FirstAndLastForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: const [
+    return const Row(
+      children: [
         Expanded(
           child: CustomFormField(
             keyboardType: TextInputType.name,

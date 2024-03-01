@@ -1,15 +1,16 @@
+import 'package:e_commerce/core/utils/constants/colors.dart';
+import 'package:e_commerce/core/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class SectionHeading extends StatelessWidget {
   const SectionHeading({
     super.key,
-    required this.color,
     this.buttonTitle = "View All",
     this.showActionButton = false,
     required this.title,
     this.onPressed,
   });
-  final Color color;
+
   final String title, buttonTitle;
   final bool showActionButton;
   final void Function()? onPressed;
@@ -21,7 +22,9 @@ class SectionHeading extends StatelessWidget {
         Text(
           title,
           style: Theme.of(context).textTheme.headlineSmall!.apply(
-                color: color,
+                color: HelperFunctions.isDarkMode(context)
+                    ? AppColors.white
+                    : AppColors.black,
               ),
         ),
         if (showActionButton)

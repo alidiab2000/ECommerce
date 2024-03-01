@@ -75,17 +75,17 @@ class ProductCardVertiacl extends StatelessWidget {
             const SizedBox(
               height: CustomSizes.defaultSpace / 2,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: CustomSizes.sm),
+            const Padding(
+              padding: EdgeInsets.only(left: CustomSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const ProductTitle(
+                  ProductTitle(
                     title: 'Green Nick Air Shoes',
                     smallsize: true,
                   ),
                   Row(
-                    children: const [
+                    children: [
                       ProductBarndNameAndVerfiedIcon(
                         brandName: 'Nick',
                         brandTextSize: TextSizes.small,
@@ -96,9 +96,9 @@ class ProductCardVertiacl extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Productprice(price: '35.0'),
                 ProductAddIcon(),
               ],

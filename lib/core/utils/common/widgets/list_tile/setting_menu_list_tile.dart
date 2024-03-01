@@ -1,4 +1,6 @@
+import 'package:e_commerce/core/utils/common/routes/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../../Feature/shop/views/home/widgets/rounded_image.dart';
@@ -25,7 +27,9 @@ class UserProfileTile extends StatelessWidget {
       ),
       trailing: IconButton(
         icon: const Icon(Iconsax.edit),
-        onPressed: () {},
+        onPressed: () => Get.toNamed(
+          AppRoute.profileViewPath,
+        ),
       ),
     );
   }

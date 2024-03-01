@@ -1,5 +1,4 @@
-import 'package:e_commerce/core/utils/constants/colors.dart';
-import 'package:e_commerce/core/utils/constants/text_strings.dart';
+ import 'package:e_commerce/core/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/constants/sizes.dart';
@@ -16,24 +15,23 @@ class HeaderSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HeaderCurveEdgeContainer(
+    return const HeaderCurveEdgeContainer(
       child: Column(
         children: [
-          const HomeAppBar(),
-          const SizedBox(height: CustomSizes.defaultSpace),
+          HomeAppBar(),
+          SizedBox(height: CustomSizes.defaultSpace),
           // Search Bar
-          const SearchTextField(),
+          SearchTextField(),
           // Space
-          const SizedBox(height: CustomSizes.defaultSpace),
+          SizedBox(height: CustomSizes.defaultSpace),
           // head of home
           Padding(
-            padding: const EdgeInsets.only(left: CustomSizes.defaultSpace),
+            padding: EdgeInsets.only(left: CustomSizes.defaultSpace),
             child: Column(
-              children: const [
+              children: [
                 //  == Heading
                 SectionHeading(
                   title: AppTexts.popularProducts,
-                  color: AppColors.white,
                 ),
                 // Space
                 SizedBox(height: CustomSizes.spaceBtwItems),

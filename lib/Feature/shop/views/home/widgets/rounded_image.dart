@@ -9,17 +9,22 @@ class RoundedImage extends StatelessWidget {
     this.applyBorderRadius = true,
     this.borderRadius = CustomSizes.sm,
     this.isNetworkImage = false,
+    this.width,
+    this.height,
   });
   final VoidCallback? onTap;
   final String image;
   final bool applyBorderRadius;
   final double borderRadius;
   final bool isNetworkImage;
+  final double? width, height;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        width: width,
+        height: height,
         decoration: BoxDecoration(
           borderRadius: applyBorderRadius
               ? BorderRadius.circular(borderRadius)

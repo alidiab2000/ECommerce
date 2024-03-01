@@ -5,7 +5,6 @@ import 'package:e_commerce/core/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../core/utils/common/widgets/containers/curve_edge.dart';
-import '../../../../core/utils/constants/colors.dart';
 import '../../../shop/views/home/widgets/text_widgets/section_heading.dart';
 
 class SettingsView extends StatelessWidget {
@@ -40,7 +39,6 @@ class SettingsView extends StatelessWidget {
                 children: [
                   const SectionHeading(
                     title: "Account Setting",
-                    color: AppColors.white,
                   ),
                   const SizedBox(
                     height: CustomSizes.defaultSpace,
@@ -84,8 +82,7 @@ class SettingsView extends StatelessWidget {
                   const SizedBox(
                     height: CustomSizes.spaceBtwSections,
                   ),
-                  const SectionHeading(
-                      color: AppColors.white, title: "App Setting"),
+                  const SectionHeading(title: "App Setting"),
                   const SizedBox(
                     height: CustomSizes.spaceBtwSections,
                   ),

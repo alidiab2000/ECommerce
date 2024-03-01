@@ -1,3 +1,5 @@
+import 'package:e_commerce/Feature/personailzation/views/profile/profile.dart';
+import 'package:e_commerce/Feature/personailzation/views/setttings/settings_view.dart';
 import 'package:e_commerce/Feature/shop/views/wishlist/wishlist_view.dart';
 
 import '../../../../Feature/shop/views/store/store_view.dart';
@@ -25,6 +27,7 @@ class AppRoute {
   static const storeViewPath = '/StoreView';
   static const wishListViewPath = '/WishListView';
   static const settingViewPath = '/SettingView';
+  static const profileViewPath = '/profileView';
 
   //[RouteList]
   static final routes = [
@@ -70,7 +73,15 @@ class AppRoute {
     ),
     GetPage(
       name: AppRoute.settingViewPath,
+      page: () => const SettingsView(),
+    ),
+    GetPage(
+      name: AppRoute.homeViewPath,
       page: () => const HomeView(),
+    ),
+    GetPage(
+      name: AppRoute.profileViewPath,
+      page: () => const ProfileView(),
     ),
   ];
 }
