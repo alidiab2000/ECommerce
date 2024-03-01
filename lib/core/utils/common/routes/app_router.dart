@@ -1,3 +1,6 @@
+import 'package:e_commerce/Feature/shop/views/wishlist/wishlist_view.dart';
+
+import '../../../../Feature/shop/views/store/store_view.dart';
 import '../widgets/login_sigup/commen_widget/screens/success.dart';
 import '../../../../Feature/auth/views/login/login.dart';
 import '../../../../Feature/auth/views/onBorading/onborading.dart';
@@ -19,6 +22,9 @@ class AppRoute {
   static const resetPasswordviewPath = '/ResetPasswordview';
   static const navigationMenuPath = '/NaviagationMenu';
   static const homeViewPath = '/HomeView';
+  static const storeViewPath = '/StoreView';
+  static const wishListViewPath = '/WishListView';
+  static const settingViewPath = '/SettingView';
 
   //[RouteList]
   static final routes = [
@@ -55,7 +61,15 @@ class AppRoute {
       page: () => const NavigationMenu(),
     ),
     GetPage(
-      name: AppRoute.homeViewPath,
+      name: AppRoute.storeViewPath,
+      page: () => const StoreView(),
+    ),
+    GetPage(
+      name: AppRoute.wishListViewPath,
+      page: () => const WishListView(),
+    ),
+    GetPage(
+      name: AppRoute.settingViewPath,
       page: () => const HomeView(),
     ),
   ];

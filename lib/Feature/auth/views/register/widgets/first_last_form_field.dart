@@ -1,4 +1,3 @@
-
 import '../../../../../core/utils/common/widgets/login_sigup/commen_widget/custom_form_field.dart';
 import '../../../../../core/utils/constants/sizes.dart';
 import '../../../../../core/utils/constants/text_strings.dart';
@@ -12,8 +11,8 @@ class FirstAndLastForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      children: [
+    return Row(
+      children: const [
         Expanded(
           child: CustomFormField(
             keyboardType: TextInputType.name,

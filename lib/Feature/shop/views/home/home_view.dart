@@ -1,9 +1,9 @@
+import '../../../../core/utils/common/widgets/containers/product_card_vertiacl.dart';
 import '../../../../core/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/utils/common/layouts/grid_view.dart';
 import '../../../../core/utils/constants/sizes.dart';
 import 'widgets/header_section.dart';
-import 'widgets/product_card_vertiacl.dart';
 import 'widgets/promo_slider.dart';
 
 class HomeView extends StatelessWidget {

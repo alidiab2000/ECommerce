@@ -1,11 +1,10 @@
 import 'package:e_commerce/core/utils/common/layouts/grid_view.dart';
 import 'package:flutter/material.dart';
-
+import '../../../../../core/utils/common/widgets/containers/product_card_vertiacl.dart';
 import '../../../../../core/utils/constants/colors.dart';
 import '../../../../../core/utils/constants/image_strings.dart';
 import '../../../../../core/utils/constants/sizes.dart';
 import '../../../../../core/utils/helpers/helper_functions.dart';
-import '../../home/widgets/product_card_vertiacl.dart';
 import '../../home/widgets/text_widgets/section_heading.dart';
 import 'brand_show_case.dart';
 

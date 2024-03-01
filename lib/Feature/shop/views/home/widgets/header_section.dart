@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/constants/sizes.dart';
 import 'catergory_list_view.dart';
-import 'curve_edge.dart';
+import '../../../../../core/utils/common/widgets/containers/curve_edge.dart';
 import 'home_appbar.dart';
 import '../../../../../core/utils/common/widgets/containers/search_text_field.dart';
 import 'text_widgets/section_heading.dart';
@@ -16,20 +16,20 @@ class HeaderSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const HeaderCurveEdgeContainer(
+    return HeaderCurveEdgeContainer(
       child: Column(
         children: [
-          HomeAppBar(),
-          SizedBox(height: CustomSizes.defaultSpace),
+          const HomeAppBar(),
+          const SizedBox(height: CustomSizes.defaultSpace),
           // Search Bar
-          SearchTextField(),
+          const SearchTextField(),
           // Space
-          SizedBox(height: CustomSizes.defaultSpace),
+          const SizedBox(height: CustomSizes.defaultSpace),
           // head of home
           Padding(
-            padding: EdgeInsets.only(left: CustomSizes.defaultSpace),
+            padding: const EdgeInsets.only(left: CustomSizes.defaultSpace),
             child: Column(
-              children: [
+              children: const [
                 //  == Heading
                 SectionHeading(
                   title: AppTexts.popularProducts,

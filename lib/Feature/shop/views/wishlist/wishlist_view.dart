@@ -1,4 +1,3 @@
-import 'package:e_commerce/Feature/shop/views/home/widgets/product_card_vertiacl.dart';
 import 'package:e_commerce/core/utils/common/layouts/grid_view.dart';
 import 'package:e_commerce/core/utils/common/routes/app_router.dart';
 import 'package:e_commerce/core/utils/common/widgets/appbar/appbar.dart';
@@ -6,6 +5,8 @@ import 'package:e_commerce/core/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../../../../core/utils/common/widgets/containers/product_card_vertiacl.dart';
 
 class WishListView extends StatelessWidget {
   const WishListView({super.key});

@@ -1,7 +1,7 @@
-import '../../../../../core/utils/common/widgets/containers/circular_container.dart';
-import '../../../../../core/utils/common/widgets/curved_edges/curved_edges.dart';
+import 'circular_container.dart';
+import '../curved_edges/curved_edges.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/utils/constants/colors.dart';
+import '../../../constants/colors.dart';
 
 class HeaderCurveEdgeContainer extends StatelessWidget {
   const HeaderCurveEdgeContainer({
@@ -17,7 +17,6 @@ class HeaderCurveEdgeContainer extends StatelessWidget {
         color: AppColors.primary,
         padding: const EdgeInsets.all(0),
         child: SizedBox(
-          height: 360,
           child: Stack(
             children: [
               Positioned(
