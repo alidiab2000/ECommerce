@@ -1,10 +1,12 @@
+import 'package:e_commerce/core/utils/constants/colors.dart';
+import 'package:e_commerce/core/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/constants/sizes.dart';
 import 'catergory_list_view.dart';
 import 'curve_edge.dart';
 import 'home_appbar.dart';
-import 'search_text_field.dart';
+import '../../../../../core/utils/common/widgets/containers/search_text_field.dart';
 import 'text_widgets/section_heading.dart';
 
 class HeaderSection extends StatelessWidget {
@@ -29,7 +31,10 @@ class HeaderSection extends StatelessWidget {
             child: Column(
               children: [
                 //  == Heading
-                SectionHeading(),
+                SectionHeading(
+                  title: AppTexts.popularProducts,
+                  color: AppColors.white,
+                ),
                 // Space
                 SizedBox(height: CustomSizes.spaceBtwItems),
                 // == Categories

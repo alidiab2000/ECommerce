@@ -8,7 +8,7 @@ class GridLayout extends StatelessWidget {
     required this.itemBuilder,
     required this.crossAxisCount,
     required this.itemCount,
-    this.mainAxisExtent = 240,
+    this.mainAxisExtent = 250,
   });
   final Widget? Function(BuildContext context, int index) itemBuilder;
   final double? mainAxisExtent;

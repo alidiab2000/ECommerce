@@ -1,3 +1,6 @@
+import 'package:e_commerce/core/utils/constants/enums.dart';
+import 'package:flutter/widgets.dart';
+
 import 'icons/favourtes_icons.dart';
 import 'rounded_image.dart';
 import '../../../../../core/utils/common/styles/shadow_style.dart';
@@ -6,10 +9,9 @@ import '../../../../../core/utils/constants/image_strings.dart';
 import '../../../../../core/utils/constants/sizes.dart';
 import '../../../../../core/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'icons/product_add_icon.dart';
 import 'text_widgets/offer_text.dart';
-import 'text_widgets/produact_brand_name.dart';
+import '../../../../../core/utils/common/widgets/containers/produact_brand_name.dart';
 import 'text_widgets/product_price.dart';
 import 'text_widgets/product_title.dart';
 
@@ -28,7 +30,7 @@ class ProductCardVertiacl extends StatelessWidget {
           boxShadow: [
             CustomShadowStyle.productShadow,
           ],
-          color: darkMode ? AppColors.darkGrey : AppColors.white,
+          color: darkMode ? AppColors.darkerGrey : AppColors.white,
           borderRadius: BorderRadius.circular(
             CustomSizes.productImageRadius,
           ),
@@ -39,12 +41,18 @@ class ProductCardVertiacl extends StatelessWidget {
               height: 160,
               padding: const EdgeInsets.all(CustomSizes.sm),
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(
+                  CustomSizes.productImageRadius,
+                ),
                 color: darkMode ? AppColors.dark : AppColors.light,
               ),
               child: Stack(
                 children: [
-                  const RoundedImage(
-                    image: AppImages.productImage1,
+                  const Padding(
+                    padding: EdgeInsets.only(top: CustomSizes.sm),
+                    child: RoundedImage(
+                      image: AppImages.productImage1,
+                    ),
                   ),
                   // Offer
                   const Positioned(
@@ -55,6 +63,7 @@ class ProductCardVertiacl extends StatelessWidget {
                   ,
                   Positioned(
                     right: 0,
+                    top: 0,
                     child: FavourtesIcon(
                       onPressed: () {},
                     ),
@@ -76,29 +85,23 @@ class ProductCardVertiacl extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      ProductBarndName(
+                      ProductBarndNameAndVerfiedIcon(
                         brandName: 'Nick',
+                        brandTextSize: TextSizes.small,
                       ),
-                      SizedBox(
-                        width: CustomSizes.sm,
-                      ),
-                      Icon(
-                        Iconsax.verify5,
-                        color: AppColors.primary,
-                        size: CustomSizes.iconXs,
-                      )
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Productprice(price: '35.0'),
-                      ProductAddIcon(),
-                    ],
-                  )
                 ],
               ),
-            )
+            ),
+            const Spacer(),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Productprice(price: '35.0'),
+                ProductAddIcon(),
+              ],
+            ),
           ],
         ),
       ),

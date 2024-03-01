@@ -28,8 +28,12 @@ class ProductAddIcon extends StatelessWidget {
             ),
           ),
         ),
-        child: const Center(
-          child: Icon(Iconsax.add),
+        child: const SizedBox(
+          width: CustomSizes.iconLg * 1.2,
+          height: CustomSizes.iconLg * 1.2,
+          child: Center(
+            child: Icon(Iconsax.add),
+          ),
         ),
       ),
     );

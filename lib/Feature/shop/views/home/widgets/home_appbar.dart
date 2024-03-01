@@ -16,7 +16,6 @@ class HomeAppBar extends StatelessWidget {
       showBackArrow: false,
       actions: [
         CartCounterIcon(
-          iconColor: AppColors.white,
           onPressed: () {},
         ),
       ],

@@ -1,3 +1,4 @@
+import 'package:e_commerce/Feature/shop/views/store/store_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,9 +10,7 @@ class NavigationMenuController extends GetxController {
   //TODO : Add all screens you'll create
   final screens = [
     const HomeView(),
-    Container(
-      color: Colors.white,
-    ),
+    const StoreView(),
     Container(
       color: Colors.deepOrange,
     ),

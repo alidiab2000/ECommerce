@@ -56,7 +56,7 @@ class DeviceUtils {
   }
 
 
-  static double getScreenHeight() {
+  static  double get getScreenHeight  {
 
     return MediaQuery.of(Get.context!).size.height;
 

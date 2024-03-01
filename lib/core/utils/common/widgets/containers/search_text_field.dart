@@ -1,6 +1,8 @@
-import '../../../../../core/utils/constants/colors.dart';
-import '../../../../../core/utils/constants/sizes.dart';
-import '../../../../../core/utils/device/device_utility.dart';
+import 'package:e_commerce/core/utils/helpers/helper_functions.dart';
+
+import '../../../constants/colors.dart';
+import '../../../constants/sizes.dart';
+import '../../../device/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -11,6 +13,7 @@ class SearchTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool darkMode = HelperFunctions.isDarkMode(context);
     return SizedBox(
       width: DeviceUtils.getScreenWidth(context) * 0.9,
       child: TextField(
@@ -25,7 +28,7 @@ class SearchTextField extends StatelessWidget {
             ),
           ),
           focusColor: Colors.black,
-          fillColor: Colors.white,
+          fillColor: darkMode ? Colors.white : AppColors.black,
           filled: true,
           prefixIcon: const Icon(Iconsax.search_normal),
           hintText: "Search in Store",

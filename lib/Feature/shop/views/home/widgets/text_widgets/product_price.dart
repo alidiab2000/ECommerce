@@ -1,3 +1,4 @@
+import 'package:e_commerce/core/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class Productprice extends StatelessWidget {
@@ -8,11 +9,14 @@ class Productprice extends StatelessWidget {
   final String price;
   @override
   Widget build(BuildContext context) {
-    return Text(
-      '\$$price',
-      overflow: TextOverflow.ellipsis,
-      maxLines: 1,
-      style: Theme.of(context).textTheme.headlineMedium,
+    return Padding(
+      padding: const EdgeInsets.only(left: CustomSizes.sm),
+      child: Text(
+        '\$$price',
+        overflow: TextOverflow.ellipsis,
+        maxLines: 1,
+        style: Theme.of(context).textTheme.headlineSmall,
+      ),
     );
   }
 }

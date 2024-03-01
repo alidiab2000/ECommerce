@@ -6,7 +6,7 @@ class CustomCircularContainer extends StatelessWidget {
     super.key,
     this.width = 400,
     this.height = 400,
-    this.radius = 400,
+    this.borderRadius = 400,
     this.padding = const EdgeInsets.all(0),
     this.child,
     this.backgroundColor = AppColors.white,
@@ -15,7 +15,7 @@ class CustomCircularContainer extends StatelessWidget {
 
   final double? width;
   final double? height;
-  final double radius;
+  final double borderRadius;
   final EdgeInsetsGeometry padding;
   final EdgeInsetsGeometry? margin;
   final Widget? child;
@@ -28,9 +28,10 @@ class CustomCircularContainer extends StatelessWidget {
       margin: margin,
       padding: padding,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(radius),
+        borderRadius: BorderRadius.circular(borderRadius),
         color: backgroundColor,
       ),
+      child: child,
     );
   }
 }
