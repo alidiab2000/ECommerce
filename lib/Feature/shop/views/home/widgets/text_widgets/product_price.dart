@@ -1,12 +1,14 @@
-import 'package:e_commerce/core/utils/constants/sizes.dart';
+import '../../../../../../core/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class Productprice extends StatelessWidget {
   const Productprice({
     super.key,
+    this.isLagre = false,
     required this.price,
   });
   final String price;
+  final bool isLagre;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,7 +17,9 @@ class Productprice extends StatelessWidget {
         '\$$price',
         overflow: TextOverflow.ellipsis,
         maxLines: 1,
-        style: Theme.of(context).textTheme.headlineSmall,
+        style: isLagre
+            ? Theme.of(context).textTheme.headlineSmall
+            : Theme.of(context).textTheme.titleMedium,
       ),
     );
   }

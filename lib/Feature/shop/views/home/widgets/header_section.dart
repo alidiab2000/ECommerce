@@ -1,4 +1,4 @@
- import 'package:e_commerce/core/utils/constants/text_strings.dart';
+import '../../../../../core/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/constants/sizes.dart';

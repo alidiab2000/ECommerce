@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+
 import '../../../../../core/utils/common/widgets/appbar/appbar.dart';
 import '../../../../../core/utils/constants/colors.dart';
 import '../../../../../core/utils/constants/text_strings.dart';
-import 'package:flutter/material.dart';
-
 import 'cart_counter.dart';
 
 class HomeAppBar extends StatelessWidget {
@@ -20,6 +20,7 @@ class HomeAppBar extends StatelessWidget {
         ),
       ],
       title: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             AppTexts.homeAppbarTitle,

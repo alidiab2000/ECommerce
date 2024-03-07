@@ -1,4 +1,4 @@
-import 'package:e_commerce/core/utils/device/device_utility.dart';
+import '../../../device/device_utility.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants/colors.dart';

@@ -1,13 +1,12 @@
-import 'package:e_commerce/core/utils/constants/enums.dart';
+import '../../../constants/enums.dart';
 import 'package:flutter/widgets.dart';
-
-import '../../../../../Feature/shop/views/home/widgets/icons/favourtes_icons.dart';
-import '../../../../../Feature/shop/views/home/widgets/icons/product_add_icon.dart';
+import 'package:get/get.dart';
+import '../icons/favourtes_icons.dart';
+import '../icons/product_add_icon.dart';
 import '../../../../../Feature/shop/views/home/widgets/rounded_image.dart';
 import '../../../../../Feature/shop/views/home/widgets/text_widgets/offer_text.dart';
 import '../../../../../Feature/shop/views/home/widgets/text_widgets/product_price.dart';
 import '../../../../../Feature/shop/views/home/widgets/text_widgets/product_title.dart';
-
 import '../../../../../core/utils/common/styles/shadow_style.dart';
 import '../../../../../core/utils/constants/colors.dart';
 import '../../../../../core/utils/constants/image_strings.dart';
@@ -15,6 +14,7 @@ import '../../../../../core/utils/constants/sizes.dart';
 import '../../../../../core/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/common/widgets/containers/produact_brand_name.dart';
+import '../../routes/app_router.dart';
 
 class ProductCardVertiacl extends StatelessWidget {
   const ProductCardVertiacl({super.key});
@@ -23,7 +23,7 @@ class ProductCardVertiacl extends StatelessWidget {
   Widget build(BuildContext context) {
     final darkMode = HelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: () => Get.toNamed(AppRoute.productDetailViewPath),
       child: Container(
         width: 140,
         padding: const EdgeInsets.all(1),

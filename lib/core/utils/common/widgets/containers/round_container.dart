@@ -1,5 +1,5 @@
-import 'package:e_commerce/core/utils/constants/colors.dart';
-import 'package:e_commerce/core/utils/constants/sizes.dart';
+import '../../../constants/colors.dart';
+import '../../../constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class RoundedContainer extends StatelessWidget {

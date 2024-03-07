@@ -1,6 +1,6 @@
-import 'package:e_commerce/Feature/personailzation/views/setttings/settings_view.dart';
-import 'package:e_commerce/Feature/shop/views/store/store_view.dart';
-import 'package:e_commerce/Feature/shop/views/wishlist/wishlist_view.dart';
+import '../../../personailzation/views/setttings/settings_view.dart';
+import '../../views/store/store_view.dart';
+import '../../views/wishlist/wishlist_view.dart';
 import 'package:get/get.dart';
 
 import '../../views/home/home_view.dart';

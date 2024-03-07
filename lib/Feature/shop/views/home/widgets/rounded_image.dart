@@ -1,5 +1,6 @@
-import '../../../../../core/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/utils/constants/sizes.dart';
 
 class RoundedImage extends StatelessWidget {
   const RoundedImage({
@@ -11,13 +12,19 @@ class RoundedImage extends StatelessWidget {
     this.isNetworkImage = false,
     this.width,
     this.height,
+    this.padding,
+    this.border,
+    this.imageColor,
   });
   final VoidCallback? onTap;
+  final BoxBorder? border;
   final String image;
+  final Color? imageColor;
   final bool applyBorderRadius;
   final double borderRadius;
   final bool isNetworkImage;
   final double? width, height;
+  final EdgeInsetsGeometry? padding;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -25,12 +32,15 @@ class RoundedImage extends StatelessWidget {
       child: Container(
         width: width,
         height: height,
+        padding: padding,
         decoration: BoxDecoration(
+          border: border,
           borderRadius: applyBorderRadius
               ? BorderRadius.circular(borderRadius)
               : BorderRadius.zero,
         ),
         child: Image(
+          color: imageColor,
           image: isNetworkImage
               ? NetworkImage(image)
               : AssetImage(image) as ImageProvider,

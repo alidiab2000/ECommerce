@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../../../../core/utils/constants/colors.dart';
-import '../../../../../../core/utils/constants/sizes.dart';
+import '../../../constants/colors.dart';
+import '../../../constants/sizes.dart';
 
 class ProductAddIcon extends StatelessWidget {
   const ProductAddIcon({

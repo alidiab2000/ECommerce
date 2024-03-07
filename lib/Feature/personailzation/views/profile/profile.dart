@@ -1,9 +1,10 @@
-import 'package:e_commerce/Feature/shop/views/home/widgets/rounded_image.dart';
-import 'package:e_commerce/Feature/shop/views/home/widgets/text_widgets/section_heading.dart';
-import 'package:e_commerce/core/utils/common/widgets/appbar/appbar.dart';
-import 'package:e_commerce/core/utils/constants/image_strings.dart';
-import 'package:e_commerce/core/utils/constants/sizes.dart';
+import '../../../shop/views/home/widgets/rounded_image.dart';
+import '../../../shop/views/home/widgets/text_widgets/section_heading.dart';
+import '../../../../core/utils/common/widgets/appbar/appbar.dart';
+import '../../../../core/utils/constants/image_strings.dart';
+import '../../../../core/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'widgets/profile_menu.dart';
 
 class ProfileView extends StatelessWidget {
@@ -76,6 +77,7 @@ class ProfileView extends StatelessWidget {
             const ProfileMenu(
               title: "User ID",
               value: '1541',
+              icon: Iconsax.copy,
             ),
             const ProfileMenu(
               title: "E-mail",
@@ -98,14 +100,15 @@ class ProfileView extends StatelessWidget {
             ),
             const Divider(),
             TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Close Account",
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyMedium!
-                      .apply(color: Colors.red),
-                ))
+              onPressed: () {},
+              child: Text(
+                "Close Account",
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .apply(color: Colors.red),
+              ),
+            ),
           ],
         ),
       ),

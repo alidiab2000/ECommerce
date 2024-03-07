@@ -1,7 +1,7 @@
-import 'package:e_commerce/core/utils/common/widgets/appbar/appbar.dart';
-import 'package:e_commerce/core/utils/common/widgets/list_tile/setting_menu_list_tile.dart';
-import 'package:e_commerce/core/utils/common/widgets/list_tile/setting_menu_tile.dart';
-import 'package:e_commerce/core/utils/constants/sizes.dart';
+import '../../../../core/utils/common/widgets/appbar/appbar.dart';
+import '../../../../core/utils/common/widgets/list_tile/setting_menu_list_tile.dart';
+import '../../../../core/utils/common/widgets/list_tile/setting_menu_tile.dart';
+import '../../../../core/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../core/utils/common/widgets/containers/curve_edge.dart';

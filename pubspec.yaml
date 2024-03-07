@@ -70,6 +70,7 @@ flutter:
     - assets/icons/categories/
     - assets/images/animations/
     - assets/icons/payment_methods/
+    - assets/icons/brands/
     - assets/images/on_boarding_images/
     - assets/logos/
    #-------------------Fonts------------------#

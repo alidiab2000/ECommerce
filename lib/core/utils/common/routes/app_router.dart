@@ -1,7 +1,8 @@
-import 'package:e_commerce/Feature/personailzation/views/profile/profile.dart';
-import 'package:e_commerce/Feature/personailzation/views/setttings/settings_view.dart';
-import 'package:e_commerce/Feature/shop/views/wishlist/wishlist_view.dart';
+import '../../../../Feature/personailzation/views/profile/profile.dart';
+import '../../../../Feature/personailzation/views/setttings/settings_view.dart';
+import '../../../../Feature/shop/views/wishlist/wishlist_view.dart';
 
+import '../../../../Feature/shop/views/product_details/product_detail.dart';
 import '../../../../Feature/shop/views/store/store_view.dart';
 import '../widgets/login_sigup/commen_widget/screens/success.dart';
 import '../../../../Feature/auth/views/login/login.dart';
@@ -28,6 +29,7 @@ class AppRoute {
   static const wishListViewPath = '/WishListView';
   static const settingViewPath = '/SettingView';
   static const profileViewPath = '/profileView';
+  static const productDetailViewPath = '/productDetailView';
 
   //[RouteList]
   static final routes = [
@@ -82,6 +84,10 @@ class AppRoute {
     GetPage(
       name: AppRoute.profileViewPath,
       page: () => const ProfileView(),
+    ),
+    GetPage(
+      name: AppRoute.productDetailViewPath,
+      page: () => const ProductDetailView(),
     ),
   ];
 }

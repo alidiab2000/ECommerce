@@ -1,11 +1,12 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import '../../../../../core/utils/common/routes/app_router.dart';
 import '../../../../../core/utils/constants/image_strings.dart';
 import '../../../../../core/utils/constants/sizes.dart';
 import '../../../../../core/utils/constants/text_strings.dart';
 import '../../../../../core/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class VerifyViewBody extends StatelessWidget {
   const VerifyViewBody({super.key});

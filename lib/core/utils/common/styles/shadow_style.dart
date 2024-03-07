@@ -1,5 +1,6 @@
-import '../../constants/colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../constants/colors.dart';
 
 class CustomShadowStyle {
   static final productShadow = BoxShadow(

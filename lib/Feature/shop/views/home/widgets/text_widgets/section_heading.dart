@@ -1,5 +1,5 @@
-import 'package:e_commerce/core/utils/constants/colors.dart';
-import 'package:e_commerce/core/utils/helpers/helper_functions.dart';
+import '../../../../../../core/utils/constants/colors.dart';
+import '../../../../../../core/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class SectionHeading extends StatelessWidget {

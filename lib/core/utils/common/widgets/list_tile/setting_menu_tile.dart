@@ -1,4 +1,4 @@
-import 'package:e_commerce/core/utils/constants/colors.dart';
+import '../../../constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class SettingMenuTile extends StatelessWidget {

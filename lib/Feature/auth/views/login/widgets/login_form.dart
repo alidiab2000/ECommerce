@@ -1,11 +1,12 @@
-import '../../../../../core/utils/common/routes/app_router.dart';
-import '../../../../../core/utils/common/widgets/login_sigup/commen_widget/custom_form_field.dart';
-import '../../register/register.dart';
-import '../../../../../core/utils/constants/sizes.dart';
-import '../../../../../core/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../../../../../core/utils/common/routes/app_router.dart';
+import '../../../../../core/utils/common/widgets/login_sigup/commen_widget/custom_form_field.dart';
+import '../../../../../core/utils/constants/sizes.dart';
+import '../../../../../core/utils/constants/text_strings.dart';
+import '../../register/register.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({

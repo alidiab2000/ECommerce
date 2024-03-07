@@ -1,4 +1,4 @@
-import 'package:e_commerce/core/utils/constants/sizes.dart';
+import '../../../constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants/colors.dart';

@@ -1,9 +1,11 @@
-import '../../../constants/sizes.dart';
-import '../../../device/device_utility.dart';
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../constants/sizes.dart';
+import '../../../device/device_utility.dart';
+
+ 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     super.key,
@@ -31,6 +33,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         automaticallyImplyLeading: false,
         leading: showBackArrow
             ? IconButton(
+              
                 onPressed: () => Get.back(),
                 icon: const Icon(Iconsax.arrow_left),
               )

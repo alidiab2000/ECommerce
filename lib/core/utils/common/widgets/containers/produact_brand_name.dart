@@ -1,6 +1,6 @@
-import 'package:e_commerce/core/utils/constants/colors.dart';
-import 'package:e_commerce/core/utils/constants/enums.dart';
-import 'package:e_commerce/core/utils/helpers/helper_functions.dart';
+import '../../../constants/colors.dart';
+import '../../../constants/enums.dart';
+import '../../../helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../constants/sizes.dart';

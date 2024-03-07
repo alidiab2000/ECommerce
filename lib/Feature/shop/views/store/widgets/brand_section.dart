@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../core/utils/common/widgets/appbar/tabar.dart';
 import '../../../../../core/utils/common/widgets/containers/search_text_field.dart';
 import '../../../../../core/utils/constants/sizes.dart';

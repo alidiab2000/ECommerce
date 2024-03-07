@@ -1,5 +1,5 @@
-import 'package:e_commerce/core/utils/common/layouts/grid_view.dart';
-import 'package:e_commerce/core/utils/constants/image_strings.dart';
+import '../../../../../core/utils/common/layouts/grid_view.dart';
+import '../../../../../core/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 
 import 'brand_card.dart';

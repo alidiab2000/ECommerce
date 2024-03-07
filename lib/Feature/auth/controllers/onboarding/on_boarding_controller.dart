@@ -1,6 +1,7 @@
-import '../../../../core/utils/common/routes/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../../core/utils/common/routes/app_router.dart';
 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();

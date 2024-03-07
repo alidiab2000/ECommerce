@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/utils/common/widgets/appbar/appbar.dart';
 import '../home/widgets/cart_counter.dart';
 import 'widgets/brand_section.dart';

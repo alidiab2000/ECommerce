@@ -1,14 +1,15 @@
-import '../../../../../core/utils/common/routes/app_router.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
+
+import '../../../../../core/utils/common/routes/app_router.dart';
 import '../../../../../core/utils/common/widgets/login_sigup/commen_widget/custom_form_field.dart';
 import '../../../../../core/utils/common/widgets/login_sigup/commen_widget/social_media_buttons.dart';
+import '../../../../../core/utils/constants/sizes.dart';
+import '../../../../../core/utils/constants/text_strings.dart';
 import '../../login/widgets/loing_form_divider.dart';
 import 'agreement.dart';
 import 'first_last_form_field.dart';
-import '../../../../../core/utils/constants/sizes.dart';
-import '../../../../../core/utils/constants/text_strings.dart';
-import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({

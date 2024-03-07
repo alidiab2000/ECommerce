@@ -1,6 +1,7 @@
-import 'package:e_commerce/core/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../../../../../core/utils/constants/sizes.dart';
 
 class ProfileMenu extends StatelessWidget {
   const ProfileMenu({
@@ -8,9 +9,11 @@ class ProfileMenu extends StatelessWidget {
     this.onTap,
     required this.title,
     required this.value,
+    this.icon = Iconsax.arrow_right_34,
   });
   final void Function()? onTap;
   final String title, value;
+  final IconData icon;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -36,9 +39,9 @@ class ProfileMenu extends StatelessWidget {
                 maxLines: 1,
               ),
             ),
-            const Expanded(
+            Expanded(
               child: Icon(
-                Iconsax.arrow_right_34,
+                icon,
                 size: 15,
               ),
             )

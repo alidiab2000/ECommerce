@@ -1,4 +1,4 @@
-import 'package:e_commerce/core/utils/helpers/helper_functions.dart';
+import '../../../helpers/helper_functions.dart';
 
 import '../../../constants/colors.dart';
 import '../../../constants/sizes.dart';
