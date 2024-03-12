@@ -82,7 +82,11 @@ class ProductDetailView extends StatelessWidget {
                   ),
                   const SizedBox(height: CustomSizes.spaceBtwSections),
                   const ReadMoreText(
-                    "This product description for blue Nike Sealve less ves This product description for blue Nike Sealve less vesThis product description for blue Nike Sealve less ves",
+                    """
+                       This product description for blue Nike Sealve less ves 
+                       This product description for blue Nike Sealve less ves
+                       This product description for blue Nike Sealve less ves
+                       """,
                     trimLines: 2,
                     trimMode: TrimMode.Line,
                     trimCollapsedText: "Show more",

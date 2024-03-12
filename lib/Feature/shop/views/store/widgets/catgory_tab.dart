@@ -16,7 +16,7 @@ class CategoryTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
+      physics: const AlwaysScrollableScrollPhysics(),
       children: [
         Padding(
           padding: const EdgeInsets.all(CustomSizes.spaceBtwItems),
