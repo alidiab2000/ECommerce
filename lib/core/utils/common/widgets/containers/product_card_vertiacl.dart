@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 import '../../../constants/enums.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
@@ -40,6 +42,7 @@ class ProductCardVertiacl extends StatelessWidget {
           children: [
             Container(
               height: 160,
+              width: double.infinity,
               padding: const EdgeInsets.all(CustomSizes.sm),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(
@@ -49,25 +52,26 @@ class ProductCardVertiacl extends StatelessWidget {
               ),
               child: Stack(
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: CustomSizes.sm),
-                    child: RoundedImage(
-                      image: AppImages.productImage1,
+                  const Positioned(
+                    right: 0,
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
+                    child: Padding(
+                      padding: EdgeInsets.only(top: CustomSizes.sm),
+                      child: RoundedImage(
+                        image: AppImages.productImage1,
+                      ),
                     ),
                   ),
                   // Offer
-                  const Positioned(
-                    top: 10,
-                    child: OfferText(offer: "20"),
-                  )
+                  const Positioned(top: 10, child: OfferText(offer: "20"))
                   //Fav Icon
                   ,
                   Positioned(
                     right: 0,
                     top: 0,
-                    child: FavourtesIcon(
-                      onPressed: () {},
-                    ),
+                    child: FavourtesIcon(onPressed: () {}),
                   ),
                 ],
               ),

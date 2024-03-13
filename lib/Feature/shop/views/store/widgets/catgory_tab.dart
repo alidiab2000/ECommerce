@@ -39,6 +39,9 @@ class CategoryTab extends StatelessWidget {
                   AppImages.productImage3,
                 ],
               ),
+              const SizedBox(
+                height: CustomSizes.spaceBtwItems,
+              ),
               const SectionHeading(
                 title: 'You may like',
                 showActionButton: true,

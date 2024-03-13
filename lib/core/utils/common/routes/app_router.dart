@@ -1,8 +1,10 @@
+import 'package:e_commerce/Feature/personailzation/views/address/add_new_address_view.dart';
+import 'package:e_commerce/Feature/shop/views/product_reviews/product_reviews_view.dart';
+import '../../../../Feature/personailzation/views/address/address_view.dart';
 import '../../../../Feature/personailzation/views/profile/profile.dart';
 import '../../../../Feature/personailzation/views/setttings/settings_view.dart';
 import '../../../../Feature/shop/views/wishlist/wishlist_view.dart';
-
-import '../../../../Feature/shop/views/product_details/product_detail.dart';
+import '../../../../Feature/shop/views/product_details/product_detail_view.dart';
 import '../../../../Feature/shop/views/store/store_view.dart';
 import '../widgets/login_sigup/commen_widget/screens/success.dart';
 import '../../../../Feature/auth/views/login/login.dart';
@@ -28,8 +30,11 @@ class AppRoute {
   static const storeViewPath = '/StoreView';
   static const wishListViewPath = '/WishListView';
   static const settingViewPath = '/SettingView';
-  static const profileViewPath = '/profileView';
-  static const productDetailViewPath = '/productDetailView';
+  static const profileViewPath = '/ProfileView';
+  static const productDetailViewPath = '/ProductDetailView';
+  static const productReviewsViewPath = '/ProductReviewsView';
+  static const addressViewPath = '/AddressView';
+  static const addNewAddressViewPath = '/AddNewAddressView';
 
   //[RouteList]
   static final routes = [
@@ -88,6 +93,18 @@ class AppRoute {
     GetPage(
       name: AppRoute.productDetailViewPath,
       page: () => const ProductDetailView(),
+    ),
+    GetPage(
+      name: AppRoute.productReviewsViewPath,
+      page: () => const ProductReviewsView(),
+    ),
+    GetPage(
+      name: AppRoute.addressViewPath,
+      page: () => const AddressView(),
+    ),
+    GetPage(
+      name: AppRoute.addNewAddressViewPath,
+      page: () => const AddNewAddress(),
     ),
   ];
 }

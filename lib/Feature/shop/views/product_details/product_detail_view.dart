@@ -1,4 +1,6 @@
 import 'package:e_commerce/Feature/shop/views/home/widgets/text_widgets/section_heading.dart';
+import 'package:e_commerce/core/utils/common/routes/app_router.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import 'widgets/Product_meta_Data.dart';
@@ -102,7 +104,8 @@ class ProductDetailView extends StatelessWidget {
                     children: [
                       const SectionHeading(title: "Reviews (199)"),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () =>
+                              Get.toNamed(AppRoute.productReviewsViewPath),
                           icon: const Icon(Iconsax.arrow_right_3))
                     ],
                   )

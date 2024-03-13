@@ -1,3 +1,6 @@
+import 'package:e_commerce/core/utils/common/routes/app_router.dart';
+import 'package:get/get.dart';
+
 import '../../../../core/utils/common/widgets/appbar/appbar.dart';
 import '../../../../core/utils/common/widgets/list_tile/setting_menu_list_tile.dart';
 import '../../../../core/utils/common/widgets/list_tile/setting_menu_tile.dart';
@@ -43,14 +46,15 @@ class SettingsView extends StatelessWidget {
                   const SizedBox(
                     height: CustomSizes.defaultSpace,
                   ),
-                  const SettingMenuTile(
+                  SettingMenuTile(
                     icon: Iconsax.safe_home,
                     title: "My Address",
-                    subtitle: "Add , Rempve product and move to checkout",
+                    subtitle: "Set shopping delivery address",
+                    onTap: () => Get.toNamed(AppRoute.addressViewPath),
                   ),
                   const SettingMenuTile(
                     icon: Iconsax.shopping_cart,
-                    title: "My Address",
+                    title: "My Cart",
                     subtitle: "Add , Rempve product and move to checkout",
                   ),
                   const SettingMenuTile(
