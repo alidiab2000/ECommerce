@@ -1,6 +1,8 @@
+import 'package:e_commerce/Feature/personailzation/views/address/widgets/single_address.dart';
 import 'package:e_commerce/core/utils/common/routes/app_router.dart';
 import 'package:e_commerce/core/utils/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce/core/utils/constants/colors.dart';
+import 'package:e_commerce/core/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +21,18 @@ class AddressView extends StatelessWidget {
         backgroundColor: AppColors.primary,
         child: const Icon(Icons.add),
       ),
-      body: Container(),
+      body: const SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(CustomSizes.defaultSpace),
+          child: Column(
+            children: [
+              SingleAddress(selectedAddress: true),
+              SingleAddress(selectedAddress: false),
+              SingleAddress(selectedAddress: false),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

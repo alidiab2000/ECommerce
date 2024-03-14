@@ -11,7 +11,7 @@ class ECommerce extends StatelessWidget {
     return GetMaterialApp(
       title: 'ECommerce App',
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoute.navigationMenuPath,
+      initialRoute: AppRoute.root,
       getPages: AppRoute.routes,
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,

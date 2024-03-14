@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/constants/sizes.dart';
-import '../../../../../core/utils/helpers/helper_functions.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({
@@ -21,8 +20,8 @@ class OnBoardingPage extends StatelessWidget {
         children: [
           Image.asset(
             image,
-            width: HelperFunctions.screenWidth * 0.8,
-            height: HelperFunctions.screenHeight * 0.6,
+            width: MediaQuery.sizeOf(context).width * 0.8,
+            height: MediaQuery.sizeOf(context).height * 0.6,
           ),
           const SizedBox(
             height: CustomSizes.spaceBtwItems,
