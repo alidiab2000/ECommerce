@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/common/widgets/appbar/appbar.dart';
-import '../home/widgets/cart_counter.dart';
+import '../../../../core/utils/common/widgets/icons/cart_counter.dart';
 import 'widgets/brand_section.dart';
 import 'widgets/catgory_tab.dart';
 
@@ -19,10 +19,8 @@ class StoreView extends StatelessWidget {
             "Store",
             style: Theme.of(context).textTheme.headlineLarge,
           ),
-          actions: [
-            CartCounterIcon(
-              onPressed: () {},
-            ),
+          actions: const [
+            CartCounterIcon(),
           ],
         ),
         body: NestedScrollView(

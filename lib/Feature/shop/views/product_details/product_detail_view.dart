@@ -9,10 +9,8 @@ import 'widgets/product_title_text.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/utils/constants/sizes.dart';
 import '../../../../core/utils/common/widgets/containers/produact_brand_name.dart';
-import '../../../../core/utils/constants/colors.dart';
 import '../../../../core/utils/constants/enums.dart';
 import '../../../../core/utils/constants/image_strings.dart';
-import '../../../../core/utils/helpers/helper_functions.dart';
 import '../home/widgets/rounded_image.dart';
 import 'widgets/product_attrbutes.dart';
 import 'widgets/prouduct_image_slider.dart';
@@ -56,18 +54,16 @@ class ProductDetailView extends StatelessWidget {
                   ),
                   const SizedBox(height: CustomSizes.spaceBtwItems),
                   //Produact Attrbutes
-                  Row(
+                  const Row(
                     children: [
                       RoundedImage(
-                          image: AppImages.nikeLogo,
-                          width: 18,
-                          imageColor: HelperFunctions.isDarkMode(context)
-                              ? AppColors.white
-                              : AppColors.black),
-                      const SizedBox(
+                        image: AppImages.nikeLogo,
+                        width: 18,
+                      ),
+                      SizedBox(
                         width: CustomSizes.spaceBtwItems,
                       ),
-                      const ProductBarndNameAndVerfiedIcon(
+                      ProductBarndNameAndVerfiedIcon(
                         brandName: 'Nike',
                         brandTextSize: TextSizes.medium,
                       ),

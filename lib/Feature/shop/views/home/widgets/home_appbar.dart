@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/common/widgets/appbar/appbar.dart';
 import '../../../../../core/utils/constants/colors.dart';
 import '../../../../../core/utils/constants/text_strings.dart';
-import 'cart_counter.dart';
+import '../../../../../core/utils/common/widgets/icons/cart_counter.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({
@@ -14,10 +14,8 @@ class HomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomAppBar(
       showBackArrow: false,
-      actions: [
-        CartCounterIcon(
-          onPressed: () {},
-        ),
+      actions: const [
+        CartCounterIcon(),
       ],
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

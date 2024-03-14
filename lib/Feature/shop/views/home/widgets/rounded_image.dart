@@ -14,12 +14,12 @@ class RoundedImage extends StatelessWidget {
     this.height,
     this.padding,
     this.border,
-    this.imageColor,
+    this.backgroundColor,
   });
   final VoidCallback? onTap;
   final BoxBorder? border;
   final String image;
-  final Color? imageColor;
+  final Color? backgroundColor;
   final bool applyBorderRadius;
   final double borderRadius;
   final bool isNetworkImage;
@@ -34,13 +34,13 @@ class RoundedImage extends StatelessWidget {
         height: height,
         padding: padding,
         decoration: BoxDecoration(
+          color: backgroundColor,
           border: border,
           borderRadius: applyBorderRadius
               ? BorderRadius.circular(borderRadius)
               : BorderRadius.zero,
         ),
         child: Image(
-          color: imageColor,
           image: isNetworkImage
               ? NetworkImage(image)
               : AssetImage(image) as ImageProvider,
