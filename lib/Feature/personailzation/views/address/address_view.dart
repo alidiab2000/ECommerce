@@ -1,4 +1,4 @@
-import 'package:e_commerce/Feature/personailzation/views/address/widgets/single_address.dart';
+import 'package:e_commerce/core/utils/common/widgets/containers/single_address.dart';
 import 'package:e_commerce/core/utils/common/routes/app_router.dart';
 import 'package:e_commerce/core/utils/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce/core/utils/constants/colors.dart';
