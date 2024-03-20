@@ -1,8 +1,8 @@
+import '../../../../../core/utils/common/widgets/text/offer_text.dart';
+import '../../../../../core/utils/common/widgets/text/product_price.dart';
 import '../../../../../core/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import '../../home/widgets/text_widgets/offer_text.dart';
-import '../../home/widgets/text_widgets/product_price.dart';
-
+  
 class ProductMetaData extends StatelessWidget {
   const ProductMetaData({super.key});
 

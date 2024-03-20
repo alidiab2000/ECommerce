@@ -1,5 +1,5 @@
 import '../../../shop/views/home/widgets/rounded_image.dart';
-import '../../../shop/views/home/widgets/text_widgets/section_heading.dart';
+import '../../../../core/utils/common/widgets/text/section_heading.dart';
 import '../../../../core/utils/common/widgets/appbar/appbar.dart';
 import '../../../../core/utils/constants/image_strings.dart';
 import '../../../../core/utils/constants/sizes.dart';

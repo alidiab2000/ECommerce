@@ -8,7 +8,7 @@ import '../../../../core/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../../../core/utils/common/widgets/containers/curve_edge.dart';
-import '../../../shop/views/home/widgets/text_widgets/section_heading.dart';
+import '../../../../core/utils/common/widgets/text/section_heading.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
@@ -58,9 +58,10 @@ class SettingsView extends StatelessWidget {
                     onTap: () => Get.toNamed(AppRoute.cartviewPath),
                     subtitle: "Add , Rempve product and move to checkout",
                   ),
-                  const SettingMenuTile(
+                  SettingMenuTile(
                     icon: Iconsax.bag_tick,
                     title: "My Order",
+                    onTap: () => Get.toNamed(AppRoute.orderViewPath),
                     subtitle: "In-progress and Completed Orders",
                   ),
                   const SettingMenuTile(

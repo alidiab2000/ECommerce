@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/common/widgets/chips/cusotm_choice_chip.dart';
 import '../../../../../core/utils/common/widgets/containers/round_container.dart';
+import '../../../../../core/utils/common/widgets/text/product_price.dart';
 import '../../../../../core/utils/constants/colors.dart';
 import '../../../../../core/utils/constants/sizes.dart';
-import '../../home/widgets/text_widgets/product_price.dart';
-import '../../home/widgets/text_widgets/section_heading.dart';
+ import '../../../../../core/utils/common/widgets/text/section_heading.dart';
 import 'product_title_text.dart';
 
 class ProductAttributes extends StatelessWidget {

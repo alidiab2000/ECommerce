@@ -4,7 +4,7 @@ import '../../../../../core/utils/common/layouts/grid_view.dart';
 import '../../../../../core/utils/common/widgets/containers/product_card_vertiacl.dart';
 import '../../../../../core/utils/constants/image_strings.dart';
 import '../../../../../core/utils/constants/sizes.dart';
-import '../../home/widgets/text_widgets/section_heading.dart';
+import '../../../../../core/utils/common/widgets/text/section_heading.dart';
 import 'brand_show_case.dart';
 
 class CategoryTab extends StatelessWidget {

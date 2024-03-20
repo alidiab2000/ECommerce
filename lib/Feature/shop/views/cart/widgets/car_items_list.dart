@@ -2,9 +2,9 @@ import 'package:e_commerce/core/utils/common/widgets/products/cart/cart_item.dar
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/common/widgets/products/cart/product_qantity_with_add_and_remove_buttons.dart';
+import '../../../../../core/utils/common/widgets/text/product_price.dart';
 import '../../../../../core/utils/constants/sizes.dart';
-import '../../home/widgets/text_widgets/product_price.dart';
-
+ 
 class CartItems extends StatelessWidget {
   const CartItems({
     super.key,

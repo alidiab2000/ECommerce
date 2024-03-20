@@ -1,14 +1,13 @@
+import 'package:e_commerce/core/utils/common/widgets/text/offer_text.dart';
 import 'package:flutter/cupertino.dart';
-
 import '../../../constants/enums.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import '../icons/favourtes_icons.dart';
 import '../icons/product_add_icon.dart';
 import '../../../../../Feature/shop/views/home/widgets/rounded_image.dart';
-import '../../../../../Feature/shop/views/home/widgets/text_widgets/offer_text.dart';
-import '../../../../../Feature/shop/views/home/widgets/text_widgets/product_price.dart';
-import '../../../../../Feature/shop/views/home/widgets/text_widgets/product_title.dart';
+import '../text/product_price.dart';
+import '../text/product_title.dart';
 import '../../../../../core/utils/common/styles/shadow_style.dart';
 import '../../../../../core/utils/constants/colors.dart';
 import '../../../../../core/utils/constants/image_strings.dart';

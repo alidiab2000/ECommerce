@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/utils/constants/colors.dart';
-import '../../../../../../core/utils/constants/sizes.dart';
+import '../../../constants/colors.dart';
+import '../../../constants/sizes.dart';
 
 class OfferText extends StatelessWidget {
   const OfferText({

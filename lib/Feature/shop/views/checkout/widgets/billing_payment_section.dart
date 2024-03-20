@@ -1,4 +1,4 @@
-import 'package:e_commerce/Feature/shop/views/home/widgets/text_widgets/section_heading.dart';
+import 'package:e_commerce/core/utils/common/widgets/text/section_heading.dart';
 import 'package:e_commerce/core/utils/common/widgets/containers/round_container.dart';
 import 'package:e_commerce/core/utils/constants/colors.dart';
 import 'package:e_commerce/core/utils/constants/image_strings.dart';

@@ -1,6 +1,7 @@
 import 'package:e_commerce/Feature/personailzation/views/address/add_new_address_view.dart';
 import 'package:e_commerce/Feature/shop/views/cart/cart_view.dart';
 import 'package:e_commerce/Feature/shop/views/checkout/checkout_view.dart';
+import 'package:e_commerce/Feature/shop/views/order/order.dart';
 import 'package:e_commerce/Feature/shop/views/product_reviews/product_reviews_view.dart';
 import '../../../../Feature/personailzation/views/address/address_view.dart';
 import '../../../../Feature/personailzation/views/profile/profile.dart';
@@ -38,6 +39,7 @@ class AppRoute {
   static const addNewAddressViewPath = '/AddNewAddressView';
   static const cartviewPath = '/CartView';
   static const chekoutViewPath = '/CheckoutView';
+  static const orderViewPath = '/OrderView';
   //[RouteList]
   static final routes = [
     GetPage(
@@ -111,6 +113,10 @@ class AppRoute {
     GetPage(
       name: AppRoute.chekoutViewPath,
       page: () => const CheckoutView(),
+    ),
+    GetPage(
+      name: AppRoute.orderViewPath,
+      page: () => const OrderView(),
     ),
   ];
 }

@@ -5,7 +5,7 @@ import '../../containers/produact_brand_name.dart';
 import '../../../../constants/enums.dart';
 import '../../../../constants/image_strings.dart';
 import '../../../../constants/sizes.dart';
-import '../../../../../../Feature/shop/views/home/widgets/text_widgets/product_title.dart';
+import '../../text/product_title.dart';
 
 class CartItem extends StatelessWidget {
   const CartItem({super.key});

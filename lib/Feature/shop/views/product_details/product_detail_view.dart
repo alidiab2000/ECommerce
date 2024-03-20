@@ -1,4 +1,4 @@
-import 'package:e_commerce/Feature/shop/views/home/widgets/text_widgets/section_heading.dart';
+import 'package:e_commerce/core/utils/common/widgets/text/section_heading.dart';
 import 'package:e_commerce/core/utils/common/routes/app_router.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';

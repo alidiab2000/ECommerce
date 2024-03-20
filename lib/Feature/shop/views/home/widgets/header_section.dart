@@ -6,7 +6,7 @@ import 'catergory_list_view.dart';
 import '../../../../../core/utils/common/widgets/containers/curve_edge.dart';
 import 'home_appbar.dart';
 import '../../../../../core/utils/common/widgets/containers/search_text_field.dart';
-import 'text_widgets/section_heading.dart';
+import '../../../../../core/utils/common/widgets/text/section_heading.dart';
 
 class HeaderSection extends StatelessWidget {
   const HeaderSection({
