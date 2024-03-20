@@ -52,9 +52,10 @@ class SettingsView extends StatelessWidget {
                     subtitle: "Set shopping delivery address",
                     onTap: () => Get.toNamed(AppRoute.addressViewPath),
                   ),
-                  const SettingMenuTile(
+                  SettingMenuTile(
                     icon: Iconsax.shopping_cart,
                     title: "My Cart",
+                    onTap: () => Get.toNamed(AppRoute.cartviewPath),
                     subtitle: "Add , Rempve product and move to checkout",
                   ),
                   const SettingMenuTile(

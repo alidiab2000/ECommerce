@@ -1,5 +1,6 @@
 import 'package:e_commerce/Feature/personailzation/views/address/add_new_address_view.dart';
 import 'package:e_commerce/Feature/shop/views/cart/cart_view.dart';
+import 'package:e_commerce/Feature/shop/views/checkout/checkout_view.dart';
 import 'package:e_commerce/Feature/shop/views/product_reviews/product_reviews_view.dart';
 import '../../../../Feature/personailzation/views/address/address_view.dart';
 import '../../../../Feature/personailzation/views/profile/profile.dart';
@@ -7,7 +8,6 @@ import '../../../../Feature/personailzation/views/setttings/settings_view.dart';
 import '../../../../Feature/shop/views/wishlist/wishlist_view.dart';
 import '../../../../Feature/shop/views/product_details/product_detail_view.dart';
 import '../../../../Feature/shop/views/store/store_view.dart';
-import '../widgets/login_sigup/commen_widget/screens/success.dart';
 import '../../../../Feature/auth/views/login/login.dart';
 import '../../../../Feature/auth/views/onBorading/onborading.dart';
 import '../../../../Feature/auth/views/password_configration/forget_password.dart';
@@ -37,7 +37,7 @@ class AppRoute {
   static const addressViewPath = '/AddressView';
   static const addNewAddressViewPath = '/AddNewAddressView';
   static const cartviewPath = '/CartView';
-
+  static const chekoutViewPath = '/CheckoutView';
   //[RouteList]
   static final routes = [
     GetPage(
@@ -55,10 +55,6 @@ class AppRoute {
     GetPage(
       name: AppRoute.verifyViewPath,
       page: () => const VerifyView(),
-    ),
-    GetPage(
-      name: AppRoute.successViewPath,
-      page: () => const SuccessView(),
     ),
     GetPage(
       name: AppRoute.forgetPasswordViewPath,
@@ -111,6 +107,10 @@ class AppRoute {
     GetPage(
       name: AppRoute.cartviewPath,
       page: () => const CartView(),
+    ),
+    GetPage(
+      name: AppRoute.chekoutViewPath,
+      page: () => const CheckoutView(),
     ),
   ];
 }

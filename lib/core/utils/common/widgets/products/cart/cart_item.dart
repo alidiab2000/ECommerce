@@ -1,11 +1,11 @@
 import 'package:e_commerce/Feature/shop/views/home/widgets/rounded_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/common/widgets/containers/produact_brand_name.dart';
-import '../../../../../core/utils/constants/enums.dart';
-import '../../../../../core/utils/constants/image_strings.dart';
-import '../../../../../core/utils/constants/sizes.dart';
-import '../../home/widgets/text_widgets/product_title.dart';
+import '../../containers/produact_brand_name.dart';
+import '../../../../constants/enums.dart';
+import '../../../../constants/image_strings.dart';
+import '../../../../constants/sizes.dart';
+import '../../../../../../Feature/shop/views/home/widgets/text_widgets/product_title.dart';
 
 class CartItem extends StatelessWidget {
   const CartItem({super.key});

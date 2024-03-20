@@ -1,3 +1,4 @@
+import 'package:e_commerce/core/utils/common/widgets/login_sigup/commen_widget/screens/success.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -66,8 +67,13 @@ class VerifyViewBody extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.offAllNamed(
-                    AppRoute.successViewPath,
+                  onPressed: () => Get.off(
+                    () => SuccessView(
+                      image: AppImages.staticSuccessIllustration,
+                      title: AppTexts.yourAccountCreatedTitle,
+                      subTitle: AppTexts.yourAccountCreatedSubTitle,
+                      onPressed: () => Get.offAllNamed(AppRoute.loginViewPath),
+                    ),
                   ),
                   child: const Text(
                     AppTexts.tContinue,
