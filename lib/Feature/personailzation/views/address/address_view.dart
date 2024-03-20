@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 
 class AddressView extends StatelessWidget {
   const AddressView({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +26,7 @@ class AddressView extends StatelessWidget {
           child: Column(
             children: [
               SingleAddress(selectedAddress: true),
+              SingleAddress(selectedAddress: false),
               SingleAddress(selectedAddress: false),
               SingleAddress(selectedAddress: false),
             ],
