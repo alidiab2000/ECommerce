@@ -1,3 +1,7 @@
+import 'package:e_commerce/core/utils/common/routes/app_router.dart';
+import 'package:e_commerce/core/utils/common/widgets/text/section_heading.dart';
+import 'package:get/get.dart';
+
 import '../../../../core/utils/common/widgets/products/product_card/product_card_vertiacl.dart';
 import '../../../../core/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
@@ -29,9 +33,13 @@ class HomeView extends StatelessWidget {
                       AppImages.promoBanner3,
                     ],
                   ),
-                  const SizedBox(
-                    height: CustomSizes.spaceBtwSections,
+                  const SizedBox(height: CustomSizes.spaceBtwSections),
+                  SectionHeading(
+                    title: "Popular Products",
+                    showActionButton: true,
+                    onPressed: () => Get.toNamed(AppRoute.allProductsViewPath),
                   ),
+                  const SizedBox(height: CustomSizes.spaceBtwSections),
                   GridLayout(
                     itemCount: 20,
                     crossAxisCount: 2,
