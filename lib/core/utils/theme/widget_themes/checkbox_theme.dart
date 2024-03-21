@@ -21,9 +21,9 @@ class CustomCheckboxTheme {
 
         borderRadius: BorderRadius.circular(CustomSizes.xs)),
 
-    checkColor: MaterialStateProperty.resolveWith((states) {
+    checkColor: WidgetStateProperty.resolveWith((states) {
 
-      if (states.contains(MaterialState.selected)) {
+      if (states.contains(WidgetState.selected)) {
 
         return AppColors.white;
 
@@ -35,9 +35,9 @@ class CustomCheckboxTheme {
 
     }),
 
-    fillColor: MaterialStateProperty.resolveWith((states) {
+    fillColor: WidgetStateProperty.resolveWith((states) {
 
-      if (states.contains(MaterialState.selected)) {
+      if (states.contains(WidgetState.selected)) {
 
         return AppColors.primary;
 
@@ -61,9 +61,9 @@ class CustomCheckboxTheme {
 
         borderRadius: BorderRadius.circular(CustomSizes.xs)),
 
-    checkColor: MaterialStateProperty.resolveWith((states) {
+    checkColor: WidgetStateProperty.resolveWith((states) {
 
-      if (states.contains(MaterialState.selected)) {
+      if (states.contains(WidgetState.selected)) {
 
         return AppColors.white;
 
@@ -75,9 +75,9 @@ class CustomCheckboxTheme {
 
     }),
 
-    fillColor: MaterialStateProperty.resolveWith((states) {
+    fillColor: WidgetStateProperty.resolveWith((states) {
 
-      if (states.contains(MaterialState.selected)) {
+      if (states.contains(WidgetState.selected)) {
 
         return AppColors.primary;
 

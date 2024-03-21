@@ -11,7 +11,8 @@ class ProductTitle extends StatelessWidget {
       title,
       style: smallsize ? th.labelLarge : th.titleSmall,
       overflow: TextOverflow.ellipsis,
-      maxLines: 2,
+      softWrap: true,
+      maxLines: 1,
       textAlign: TextAlign.left,
     );
   }

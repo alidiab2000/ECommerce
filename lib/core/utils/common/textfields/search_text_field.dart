@@ -1,8 +1,8 @@
-import '../../../helpers/helper_functions.dart';
+import '../../helpers/helper_functions.dart';
 
-import '../../../constants/colors.dart';
-import '../../../constants/sizes.dart';
-import '../../../device/device_utility.dart';
+import '../../constants/colors.dart';
+import '../../constants/sizes.dart';
+import '../../device/device_utility.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/common/widgets/appbar/tabar.dart';
-import '../../../../../core/utils/common/widgets/containers/search_text_field.dart';
+import '../../../../../core/utils/common/widgets/tabbar/tabbar.dart';
+import '../../../../../core/utils/common/textfields/search_text_field.dart';
 import '../../../../../core/utils/constants/sizes.dart';
 import '../../../../../core/utils/common/widgets/text/section_heading.dart';
 import 'store_grid_layout.dart';

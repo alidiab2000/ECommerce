@@ -1,21 +1,21 @@
 import 'package:e_commerce/core/utils/common/widgets/text/offer_text.dart';
 import 'package:flutter/cupertino.dart';
-import '../../../constants/enums.dart';
+import '../../../../constants/enums.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import '../icons/favourtes_icons.dart';
-import '../icons/product_add_icon.dart';
-import '../../../../../Feature/shop/views/home/widgets/rounded_image.dart';
-import '../text/product_price.dart';
-import '../text/product_title.dart';
-import '../../../../../core/utils/common/styles/shadow_style.dart';
-import '../../../../../core/utils/constants/colors.dart';
-import '../../../../../core/utils/constants/image_strings.dart';
-import '../../../../../core/utils/constants/sizes.dart';
-import '../../../../../core/utils/helpers/helper_functions.dart';
+import '../../icons/favourtes_icons.dart';
+import '../../icons/product_add_icon.dart';
+import '../../../../../../Feature/shop/views/home/widgets/rounded_image.dart';
+import '../../text/product_price.dart';
+import '../../text/product_title.dart';
+import '../../../styles/shadow_style.dart';
+import '../../../../constants/colors.dart';
+import '../../../../constants/image_strings.dart';
+import '../../../../constants/sizes.dart';
+import '../../../../helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/utils/common/widgets/containers/produact_brand_name.dart';
-import '../../routes/app_router.dart';
+import '../../containers/produact_brand_name.dart';
+import '../../../routes/app_router.dart';
 
 class ProductCardVertiacl extends StatelessWidget {
   const ProductCardVertiacl({super.key});

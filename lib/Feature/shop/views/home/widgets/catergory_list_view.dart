@@ -1,3 +1,6 @@
+import 'package:e_commerce/core/utils/common/routes/app_router.dart';
+import 'package:get/get.dart';
+
 import '../../../../../core/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -12,13 +15,13 @@ class CatergoryListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 80,
+      height: 120,
       child: ListView.builder(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return CategoryItem(
-            onTap: () {},
+            onTap: () => Get.toNamed(AppRoute.subCatergoriesViewPath),
             image: AppImages.shoeIcon,
             catergoryName: 'Shoses',
           );

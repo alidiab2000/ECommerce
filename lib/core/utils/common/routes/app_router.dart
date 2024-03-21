@@ -3,6 +3,7 @@ import 'package:e_commerce/Feature/shop/views/cart/cart_view.dart';
 import 'package:e_commerce/Feature/shop/views/checkout/checkout_view.dart';
 import 'package:e_commerce/Feature/shop/views/order/order.dart';
 import 'package:e_commerce/Feature/shop/views/product_reviews/product_reviews_view.dart';
+import 'package:e_commerce/Feature/shop/views/sub_catergory/sub_caterogries_view.dart';
 import '../../../../Feature/personailzation/views/address/address_view.dart';
 import '../../../../Feature/personailzation/views/profile/profile.dart';
 import '../../../../Feature/personailzation/views/setttings/settings_view.dart';
@@ -40,6 +41,7 @@ class AppRoute {
   static const cartviewPath = '/CartView';
   static const chekoutViewPath = '/CheckoutView';
   static const orderViewPath = '/OrderView';
+  static const subCatergoriesViewPath = '/SubCatergoriesView';
   //[RouteList]
   static final routes = [
     GetPage(
@@ -117,6 +119,10 @@ class AppRoute {
     GetPage(
       name: AppRoute.orderViewPath,
       page: () => const OrderView(),
+    ),
+    GetPage(
+      name: AppRoute.subCatergoriesViewPath,
+      page: () => const SubCatergriesView(),
     ),
   ];
 }

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../../core/utils/common/widgets/containers/product_card_vertiacl.dart';
+import '../../../../core/utils/common/widgets/products/product_card/product_card_vertiacl.dart';
 
 class WishListView extends StatelessWidget {
   const WishListView({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/common/layouts/grid_view.dart';
-import '../../../../../core/utils/common/widgets/containers/product_card_vertiacl.dart';
+import '../../../../../core/utils/common/widgets/products/product_card/product_card_vertiacl.dart';
 import '../../../../../core/utils/constants/image_strings.dart';
 import '../../../../../core/utils/constants/sizes.dart';
 import '../../../../../core/utils/common/widgets/text/section_heading.dart';
