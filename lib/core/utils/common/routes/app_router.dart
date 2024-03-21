@@ -7,6 +7,7 @@ import 'package:e_commerce/Feature/shop/views/sub_catergory/sub_caterogries_view
 import '../../../../Feature/personailzation/views/address/address_view.dart';
 import '../../../../Feature/personailzation/views/profile/profile.dart';
 import '../../../../Feature/personailzation/views/setttings/settings_view.dart';
+import '../../../../Feature/shop/views/all_brands/all_brands.dart';
 import '../../../../Feature/shop/views/all_products/all_products_view.dart';
 import '../../../../Feature/shop/views/wishlist/wishlist_view.dart';
 import '../../../../Feature/shop/views/product_details/product_detail_view.dart';
@@ -44,6 +45,8 @@ class AppRoute {
   static const orderViewPath = '/OrderView';
   static const subCatergoriesViewPath = '/SubCatergoriesView';
   static const allProductsViewPath = '/AllProductsView';
+  static const allBrnadsViewPath = '/AllBrandsView';
+
   //[RouteList]
   static final routes = [
     GetPage(
@@ -129,6 +132,10 @@ class AppRoute {
     GetPage(
       name: AppRoute.allProductsViewPath,
       page: () => const AllProductsView(),
+    ),
+    GetPage(
+      name: AppRoute.allBrnadsViewPath,
+      page: () => const AllBrandsView(),
     )
   ];
 }

@@ -5,7 +5,7 @@ import '../../../../../core/utils/constants/colors.dart';
 import '../../../../../core/utils/constants/image_strings.dart';
 import '../../../../../core/utils/constants/sizes.dart';
 import '../../../../../core/utils/helpers/helper_functions.dart';
-import 'brand_card.dart';
+import '../../../../../core/utils/common/widgets/containers/brand_card.dart';
 
 class BrandShowCase extends StatelessWidget {
   const BrandShowCase({

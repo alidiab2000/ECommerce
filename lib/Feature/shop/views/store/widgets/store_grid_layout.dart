@@ -2,7 +2,7 @@ import '../../../../../core/utils/common/layouts/grid_view.dart';
 import '../../../../../core/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 
-import 'brand_card.dart';
+import '../../../../../core/utils/common/widgets/containers/brand_card.dart';
 
 class StoreGridLayOut extends StatelessWidget {
   const StoreGridLayOut({

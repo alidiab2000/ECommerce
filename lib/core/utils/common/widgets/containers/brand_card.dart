@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/common/widgets/containers/circular_image_comtainer.dart';
-import '../../../../../core/utils/common/widgets/containers/produact_brand_name.dart';
-import '../../../../../core/utils/constants/colors.dart';
-import '../../../../../core/utils/constants/enums.dart';
-import '../../../../../core/utils/constants/image_strings.dart';
-import '../../../../../core/utils/constants/sizes.dart';
+import 'circular_image_comtainer.dart';
+import 'produact_brand_name.dart';
+import '../../../constants/colors.dart';
+import '../../../constants/enums.dart';
+import '../../../constants/image_strings.dart';
+import '../../../constants/sizes.dart';
 
 class BrandCard extends StatelessWidget {
   const BrandCard({

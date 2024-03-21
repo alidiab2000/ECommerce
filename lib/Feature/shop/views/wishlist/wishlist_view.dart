@@ -1,9 +1,9 @@
+import 'package:e_commerce/Feature/shop/controllers/navigation_bar_menu.dart/navigation_bar_menu_controller.dart';
+
 import '../../../../core/utils/common/layouts/grid_view.dart';
-import '../../../../core/utils/common/routes/app_router.dart';
 import '../../../../core/utils/common/widgets/appbar/appbar.dart';
 import '../../../../core/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../core/utils/common/widgets/products/product_card/product_card_vertiacl.dart';
@@ -22,9 +22,8 @@ class WishListView extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () => Get.toNamed(
-              AppRoute.homeViewPath,
-            ),
+            onPressed: () =>
+                NavigationMenuController.instance.selectedIndex.value = 0,
             icon: const Icon(Iconsax.add),
           ),
         ],

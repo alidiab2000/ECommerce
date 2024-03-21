@@ -21,6 +21,7 @@ class PromoSlider extends StatelessWidget {
         CarouselSlider(
           options: CarouselOptions(
             viewportFraction: 1,
+            autoPlay: true,
             onPageChanged: (index, reason) =>
                 controller.updatePageIndecator(index),
           ),

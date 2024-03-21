@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
+import '../../../../../core/utils/common/routes/app_router.dart';
 import '../../../../../core/utils/common/widgets/tab_bar/tabbar.dart';
 import '../../../../../core/utils/common/textfields/search_text_field.dart';
 import '../../../../../core/utils/constants/sizes.dart';
@@ -25,19 +27,21 @@ class BrandSection extends StatelessWidget {
         child: ListView(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          children: const [
-            SizedBox(
+          children: [
+            const SizedBox(
               height: CustomSizes.spaceBtwSections,
             ),
-            SearchTextField(),
-            SizedBox(
+            const SearchTextField(),
+            const SizedBox(
               height: CustomSizes.spaceBtwItems / 1.5,
             ),
             SectionHeading(
               title: 'Feature bbrands',
               showActionButton: true,
+              onPressed: () => Get.toNamed(AppRoute.allBrnadsViewPath),
             ),
-            StoreGridLayOut()
+            const SizedBox(height: CustomSizes.spaceBtwItems),
+            const StoreGridLayOut()
           ],
         ),
       ),
