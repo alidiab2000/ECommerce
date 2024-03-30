@@ -26,35 +26,36 @@ environment:
 # consider running `flutter pub upgrade --major-versions`. Alternatively,
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
-
 dependencies:
-# Utility Packages 
-  http: ^1.2.0
-  intl: ^0.18.1
-  logger: ^2.0.2+1
-  url_launcher: ^6.2.4
-  flutter_native_splash: ^2.3.10
-# Icons 
-  cupertino_icons: ^1.0.2
-  iconsax: ^0.0.8
-# State Mangament 
-  get: ^4.6.6
-  get_storage: ^2.1.1
-
-#Product Specific
   capped_progress_indicator: ^0.0.2
   carousel_slider: ^4.2.1
+  cloud_firestore: ^4.15.10
+  connectivity_plus: ^6.0.1
+  cupertino_icons: ^1.0.2
   dio: ^5.4.0
-
-  flutter_rating_bar: ^4.0.1
+  firebase_auth: ^4.18.0
+  firebase_core: ^2.27.1
+  firebase_storage: ^11.6.11
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.3.10
+  flutter_rating_bar: ^4.0.1
+  get: ^4.6.6
+  get_storage: ^2.1.1
+  http: ^1.2.0
+  iconsax: ^0.0.8
+  intl: ^0.18.1
+  json_annotation: ^4.8.1
+ 
+  logger: ^2.0.2+1
+  lottie: ^3.1.0
   readmore: ^2.2.0
   smooth_page_indicator: ^1.1.0
-
+  url_launcher: ^6.2.4
 
 dev_dependencies:
-
+  build_runner: ^2.4.9
+  json_serializable: ^6.7.1
   flutter_lints: ^3.0.1
   flutter_test:
     sdk: flutter
@@ -73,7 +74,7 @@ flutter:
     - assets/icons/brands/
     - assets/images/on_boarding_images/
     - assets/logos/
-   #-------------------Fonts------------------#
+  #-------------------Fonts------------------#
   fonts:
     - family: Poppins
       fonts:

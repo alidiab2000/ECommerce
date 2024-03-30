@@ -1,12 +1,12 @@
+import 'package:e_commerce/Feature/auth/controllers/register/register_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
-import '../../../../../core/utils/common/routes/app_router.dart';
 import '../../../../../core/utils/common/widgets/login_sigup/commen_widget/custom_form_field.dart';
 import '../../../../../core/utils/common/widgets/login_sigup/commen_widget/social_media_buttons.dart';
 import '../../../../../core/utils/constants/sizes.dart';
 import '../../../../../core/utils/constants/text_strings.dart';
+import '../../../../../core/utils/validators/validation.dart';
 import '../../login/widgets/loing_form_divider.dart';
 import 'agreement.dart';
 import 'first_last_form_field.dart';
@@ -18,7 +18,9 @@ class SignUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(RegisterController());
     return Form(
+      key: controller.signupFormKey,
       child: Column(
         children: [
           //First  and last name form field
@@ -26,34 +28,57 @@ class SignUpForm extends StatelessWidget {
           const SizedBox(
             height: CustomSizes.spaceBtwInputFields,
           ),
-          const CustomFormField(
+          //username form field
+          CustomFormField(
+            controller: controller.userName,
+            validator: (username) =>
+                Validator.validateName("Username", username),
             keyboardType: TextInputType.name,
-            prefixIcon: Icon(Iconsax.user_edit),
+            prefixIcon: const Icon(Iconsax.user_edit),
             labelText: AppTexts.username,
           ),
           const SizedBox(
             height: CustomSizes.spaceBtwInputFields,
           ),
-          const CustomFormField(
+          //email form field
+          CustomFormField(
+            controller: controller.email,
+            validator: (email) => Validator.validateEmail(email),
             keyboardType: TextInputType.name,
-            prefixIcon: Icon(Iconsax.direct),
+            prefixIcon: const Icon(Iconsax.direct),
             labelText: AppTexts.email,
           ),
           const SizedBox(
             height: CustomSizes.spaceBtwInputFields,
           ),
-          const CustomFormField(
+          //phone no form field
+          CustomFormField(
+            controller: controller.phoneNumber,
+            validator: (phoneNum) => Validator.validatePhoneNumber(phoneNum),
             keyboardType: TextInputType.name,
-            prefixIcon: Icon(Iconsax.call),
+            prefixIcon: const Icon(Iconsax.call),
             labelText: AppTexts.phoneNo,
           ),
           const SizedBox(
             height: CustomSizes.spaceBtwInputFields,
           ),
-          const CustomFormField(
-            keyboardType: TextInputType.visiblePassword,
-            prefixIcon: Icon(Iconsax.password_check),
-            labelText: AppTexts.password,
+          //password form field
+          Obx(
+            () => CustomFormField(
+              controller: controller.password,
+              obscureText: controller.hidePassword.value,
+              validator: (password) => Validator.validatePassword(password),
+              keyboardType: TextInputType.visiblePassword,
+              prefixIcon: const Icon(Iconsax.password_check),
+              labelText: AppTexts.password,
+              suffix: GestureDetector(
+                onTap: () => controller.hidePassword.value =
+                    !controller.hidePassword.value,
+                child: Icon(controller.hidePassword.value
+                    ? Iconsax.eye
+                    : Iconsax.eye_slash),
+              ),
+            ),
           ),
           const SizedBox(
             height: CustomSizes.defaultSpace,
@@ -67,11 +92,7 @@ class SignUpForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {
-                Get.toNamed(
-                  AppRoute.verifyViewPath,
-                );
-              },
+              onPressed: controller.register,
               child: const Text(
                 AppTexts.createAccount,
               ),

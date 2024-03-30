@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import '../../../../core/utils/common/routes/app_router.dart';
 
@@ -21,6 +22,9 @@ class OnBoardingController extends GetxController {
   // Update current inex & Jump to next page
   void nextPage() {
     if (currentPageIndex.value == 2) {
+      var isFirstTime = "isFirstTime";
+      final storage = GetStorage();
+      storage.write(isFirstTime, false);
       Get.offAllNamed(
         AppRoute.loginViewPath,
       );
@@ -32,7 +36,12 @@ class OnBoardingController extends GetxController {
   }
 
   //Update Current Index and Jump To last page
-  void skipOnBoarding() => Get.offAllNamed(
-        AppRoute.loginViewPath,
-      );
+  void skipOnBoarding() {
+    var isFirstTime = "isFirstTime";
+    final storage = GetStorage();
+    storage.write(isFirstTime, false);
+    Get.offAllNamed(
+      AppRoute.loginViewPath,
+    );
+  }
 }
