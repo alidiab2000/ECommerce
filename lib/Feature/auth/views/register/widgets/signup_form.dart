@@ -44,7 +44,7 @@ class SignUpForm extends StatelessWidget {
           CustomFormField(
             controller: controller.email,
             validator: (email) => Validator.validateEmail(email),
-            keyboardType: TextInputType.name,
+            keyboardType: TextInputType.emailAddress,
             prefixIcon: const Icon(Iconsax.direct),
             labelText: AppTexts.email,
           ),
@@ -92,7 +92,9 @@ class SignUpForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: controller.register,
+              onPressed: () async {
+                await controller.registerWithEmailAndPassword();
+              },
               child: const Text(
                 AppTexts.createAccount,
               ),

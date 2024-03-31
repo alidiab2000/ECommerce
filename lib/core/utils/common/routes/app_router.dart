@@ -23,7 +23,7 @@ import '../../../../Feature/shop/views/navigationBarMenu/navigation_menu.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRoute {
-  static const root = '/';
+  static const onBoardingView = '/OnBoardingViewPath';
   static const loginViewPath = '/LoginView';
   static const registerViewPath = '/RegisterView';
   static const verifyViewPath = '/VerifyView';
@@ -50,7 +50,7 @@ class AppRoute {
   //[RouteList]
   static final routes = [
     GetPage(
-      name: AppRoute.root,
+      name: AppRoute.onBoardingView,
       page: () => const OnBoardingView(),
     ),
     GetPage(

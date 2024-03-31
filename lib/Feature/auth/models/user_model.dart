@@ -1,4 +1,4 @@
- 
+import 'package:e_commerce/core/utils/formatters/formatter.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user_model.g.dart';
@@ -21,8 +21,24 @@ class UserModel {
   final String lastName;
   final String phoneNumber;
   final String profilePicture;
-  factory UserModel.fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);
+  //Function To Get Full Name
+  String get fullName => "$firstName $lastName";
+  //Function To Get Formatted Phone Number
+  String get formattedPhoneNumber => TFormatter.formatPhoneNumber(phoneNumber);
+  static List<String> nameparts(fullName) => fullName.split(" ");
+  //Genrate a username from full name
+  static String generateUserName(fullName) {
+    List<String> nameparts = fullName.split(" ");
+    String firstName = nameparts[0].toLowerCase();
+    String lastName = nameparts.length > 1 ? nameparts[1].toLowerCase() : "";
+    String camelCaseName = "$firstName$lastName";
+    String userNameWithPerfix = "user_$camelCaseName";
+    return userNameWithPerfix;
+  }
 
   /// Connect the generated [_$UserModelToJson] function to the `toJson` method.
   Map<String, dynamic> toJson() => _$UserModelToJson(this);
+
+  factory UserModel.fromJson(Map<String, dynamic> json) =>
+      _$UserModelFromJson(json);
 }

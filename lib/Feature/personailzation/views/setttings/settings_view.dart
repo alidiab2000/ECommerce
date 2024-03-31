@@ -1,4 +1,5 @@
 import 'package:e_commerce/core/utils/common/routes/app_router.dart';
+import 'package:e_commerce/data/repositories/auth/auth_repo.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/utils/common/widgets/appbar/appbar.dart';
@@ -115,9 +116,17 @@ class SettingsView extends StatelessWidget {
                     subtitle: 'Set image quality to be seen',
                     trailing: Switch(value: true, onChanged: (val) {}),
                   ),
+                  const SizedBox(height: CustomSizes.defaultSpace),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton(
+                      onPressed: AuthenticationRepository.instance.signOut,
+                      child: const Text("Logout"),
+                    ),
+                  )
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

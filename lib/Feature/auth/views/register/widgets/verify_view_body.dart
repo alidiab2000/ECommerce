@@ -1,25 +1,28 @@
-import 'package:e_commerce/core/utils/common/widgets/login_sigup/commen_widget/screens/success.dart';
+import 'package:e_commerce/data/repositories/auth/auth_repo.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../core/utils/common/routes/app_router.dart';
 import '../../../../../core/utils/constants/image_strings.dart';
 import '../../../../../core/utils/constants/sizes.dart';
 import '../../../../../core/utils/constants/text_strings.dart';
 import '../../../../../core/utils/helpers/helper_functions.dart';
+import '../../../controllers/verify/verify_controller.dart';
 
 class VerifyViewBody extends StatelessWidget {
   const VerifyViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // final String email = Get.arguments;
+    final countroller = Get.put(VerifiyController());
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            onPressed: () => Get.back(),
+            onPressed: AuthenticationRepository.instance.signOut,
             icon: const Icon(
               CupertinoIcons.clear,
             ),
@@ -49,7 +52,7 @@ class VerifyViewBody extends StatelessWidget {
                 height: CustomSizes.spaceBtwItems,
               ),
               Text(
-                'Exsample@gmail.com',
+                'alidaib8899@gmail.com',
                 style: Theme.of(context).textTheme.labelLarge,
                 textAlign: TextAlign.center,
               ),
@@ -67,14 +70,7 @@ class VerifyViewBody extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () => Get.off(
-                    () => SuccessView(
-                      image: AppImages.staticSuccessIllustration,
-                      title: AppTexts.yourAccountCreatedTitle,
-                      subTitle: AppTexts.yourAccountCreatedSubTitle,
-                      onPressed: () => Get.offAllNamed(AppRoute.loginViewPath),
-                    ),
-                  ),
+                  onPressed: countroller.checkEmailVerificationStates,
                   child: const Text(
                     AppTexts.tContinue,
                   ),
@@ -84,8 +80,8 @@ class VerifyViewBody extends StatelessWidget {
                 height: CustomSizes.spaceBtwItems,
               ),
               TextButton(
+                onPressed: countroller.sendEmailVerificatiion,
                 child: const Text(AppTexts.resendEmail),
-                onPressed: () {},
               )
             ],
           ),

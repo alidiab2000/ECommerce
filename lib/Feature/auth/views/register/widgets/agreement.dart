@@ -1,3 +1,4 @@
+import 'package:e_commerce/core/utils/constants/sizes.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/utils/constants/colors.dart';
@@ -28,6 +29,7 @@ class AgreementAndPolciy extends StatelessWidget {
             ),
           ),
         ),
+        const SizedBox(width: CustomSizes.xs),
         Text.rich(
           TextSpan(
             children: [

@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../../../core/utils/common/styles/spacing_style.dart';
+import '../../../../../core/utils/common/widgets/containers/social_buton.dart';
 import '../../../../../core/utils/constants/image_strings.dart';
 import '../../../../../core/utils/constants/sizes.dart';
 import '../../../../../core/utils/constants/text_strings.dart';
+import '../../../controllers/login/login_controller.dart';
 import 'lgoin_header.dart';
 import 'login_form.dart';
 import 'loing_form_divider.dart';
-import 'social_buton.dart';
-
+ 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({
     super.key,
   });
-
+  
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+   final controller = Get.put(LoginController()); 
+     return SingleChildScrollView(
       child: Padding(
         padding: SpacingStyle.paddingWithAppBarHeight,
         child: Column(
@@ -36,7 +39,7 @@ class LoginViewBody extends StatelessWidget {
                   children: [
                     SocialButton(
                       iconImage: AppImages.google,
-                      onPressed: () {},
+                      onPressed:  controller.googleSignIn,
                     ),
                     const SizedBox(
                       width: CustomSizes.defaultSpace,

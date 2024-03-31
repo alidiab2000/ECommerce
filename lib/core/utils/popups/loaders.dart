@@ -33,7 +33,7 @@ class Loaders {
         backgroundColor: Colors.red.shade600,
         isDismissible: true,
         shouldIconPulse: true,
-        duration: const Duration(seconds: 2),
+        duration: const Duration(seconds: 3),
         margin: const EdgeInsets.all(20),
         icon: const Icon(Iconsax.warning_2, color: AppColors.white));
   }

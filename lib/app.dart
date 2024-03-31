@@ -13,7 +13,6 @@ class ECommerce extends StatelessWidget {
       title: 'ECommerce App',
       initialBinding: GenralBindings(),
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoute.root,
       getPages: AppRoute.routes,
       themeMode: ThemeMode.system,
       theme: AppTheme.lightTheme,

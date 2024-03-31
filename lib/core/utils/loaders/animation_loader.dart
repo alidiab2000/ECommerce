@@ -14,8 +14,8 @@ class AnimationLoader extends StatelessWidget {
     this.actionText,
     this.onActionPressed,
   });
-  final String text;
 
+  final String text;
   final String animation;
   final bool showAction;
   final String? actionText;

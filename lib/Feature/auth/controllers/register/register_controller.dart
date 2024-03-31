@@ -1,4 +1,5 @@
 import 'package:e_commerce/Feature/auth/models/user_model.dart';
+import 'package:e_commerce/core/utils/common/routes/app_router.dart';
 import 'package:e_commerce/core/utils/constants/image_strings.dart';
 import 'package:e_commerce/core/utils/popups/loaders.dart';
 import 'package:e_commerce/data/repositories/user/user_repo.dart';
@@ -22,7 +23,7 @@ class RegisterController extends GetxController {
   final phoneNumber = TextEditingController();
   final signupFormKey = GlobalKey<FormState>();
 
-  Future<void> register() async {
+  Future<void> registerWithEmailAndPassword() async {
     // Start Loading
     try {
       FullscreenLoader.openLoadingDialog(
@@ -50,6 +51,7 @@ class RegisterController extends GetxController {
         email: email.text.trim(),
         password: password.text.trim(),
       );
+
       // Save Authanticated User data in the firestore
       final newUser = UserModel(
         email: email.text.trim(),
@@ -63,14 +65,15 @@ class RegisterController extends GetxController {
 
       // Add User to firestore
       final userRepo = Get.put(UserRepository());
-      userRepo.saveUserData(user: newUser);
+      await userRepo.saveUserData(user: newUser);
 
+      // Remove loader
+      FullscreenLoader.stopLoading();
+      Loaders.successSnackBar(title: "Success", message: "Account Created");
 
-
-
-
-
-      
+      // Navigate to verification Screen
+      await Get.toNamed(AppRoute.verifyViewPath);
+      debugPrint("User ID : ${userCredential.user!.uid}");
     } catch (e) {
       Loaders.errorSnackBar(title: "Oh Snap", message: e.toString());
     } finally {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../Feature/auth/views/login/widgets/social_buton.dart';
+import '../../containers/social_buton.dart';
 import '../../../../constants/image_strings.dart';
 import '../../../../constants/sizes.dart';
 
