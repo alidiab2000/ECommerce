@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:e_commerce/core/utils/common/widgets/login_sigup/commen_widget/screens/success.dart';
 import 'package:e_commerce/core/utils/constants/image_strings.dart';
 import 'package:e_commerce/core/utils/constants/text_strings.dart';

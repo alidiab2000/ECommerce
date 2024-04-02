@@ -8,7 +8,7 @@ class Loaders {
     Get.snackbar(title, message,
         snackPosition: SnackPosition.BOTTOM,
         colorText: AppColors.white,
-        backgroundColor: Colors.orange,
+        backgroundColor: AppColors.primary,
         isDismissible: true,
         shouldIconPulse: true,
         duration: const Duration(seconds: 2),

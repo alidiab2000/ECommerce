@@ -75,9 +75,8 @@ class RegisterController extends GetxController {
       await Get.toNamed(AppRoute.verifyViewPath);
       debugPrint("User ID : ${userCredential.user!.uid}");
     } catch (e) {
-      Loaders.errorSnackBar(title: "Oh Snap", message: e.toString());
-    } finally {
       FullscreenLoader.stopLoading();
+      Loaders.errorSnackBar(title: "Error", message: e.toString());
     }
   }
 }

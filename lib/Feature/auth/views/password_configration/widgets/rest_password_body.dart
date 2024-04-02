@@ -1,6 +1,6 @@
+import 'package:e_commerce/Feature/auth/controllers/forget_password/forget_password_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../../../core/utils/common/routes/app_router.dart';
 import '../../../../../core/utils/constants/image_strings.dart';
 import '../../../../../core/utils/constants/sizes.dart';
@@ -10,10 +10,11 @@ import '../../../../../core/utils/helpers/helper_functions.dart';
 class ResetPasswordBody extends StatelessWidget {
   const ResetPasswordBody({
     super.key,
-  });
+  }); 
 
   @override
   Widget build(BuildContext context) {
+    final email = Get.arguments as String;
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(CustomSizes.defaultSpace),
@@ -25,33 +26,30 @@ class ResetPasswordBody extends StatelessWidget {
               AppImages.deliveredEmailIllustration,
               width: HelperFunctions.screenWidth * 0.6,
             ),
-            const SizedBox(
-              height: CustomSizes.spaceBtwItems,
-            ),
+
+            //Space
+            const SizedBox(height: CustomSizes.spaceBtwItems),
             Text(
               AppTexts.changeYourPasswordTitle,
               style: Theme.of(context).textTheme.headlineMedium,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(
-              height: CustomSizes.spaceBtwItems,
-            ),
+            //Space
+            const SizedBox(height: CustomSizes.spaceBtwItems),
             Text(
-              'Exsample@gmail.com',
+              'alidiab8899@gmail.com',
               style: Theme.of(context).textTheme.labelLarge,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(
-              height: CustomSizes.spaceBtwItems,
-            ),
+            //Space
+            const SizedBox(height: CustomSizes.spaceBtwItems),
             Text(
               AppTexts.changeYourPasswordSubTitle,
               style: Theme.of(context).textTheme.labelMedium,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(
-              height: CustomSizes.spaceBtwSections,
-            ),
+            //Space
+            const SizedBox(height: CustomSizes.spaceBtwSections),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -63,12 +61,11 @@ class ResetPasswordBody extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: CustomSizes.spaceBtwItems,
-            ),
+            const SizedBox(height: CustomSizes.spaceBtwItems),
             TextButton(
               child: const Text(AppTexts.resendEmail),
-              onPressed: () {},
+              onPressed: () => ForgetPasswordController.instance
+                  .resendPassRestEmail(email: email),
             )
           ],
         ),

@@ -16,7 +16,7 @@ class OnBoardingBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final OnBoardingController controller = Get.put(OnBoardingController());
+    final  controller = Get.put(OnBoardingController());
 
     return Stack(
       children: [
