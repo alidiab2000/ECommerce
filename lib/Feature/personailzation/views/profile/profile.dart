@@ -1,4 +1,8 @@
-import '../../../shop/views/home/widgets/rounded_image.dart';
+import 'package:e_commerce/Feature/personailzation/controllers/user/user_controller.dart';
+import 'package:e_commerce/core/utils/common/routes/app_router.dart';
+import 'package:e_commerce/core/utils/popups/loaders.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import '../../../../core/utils/common/widgets/text/section_heading.dart';
 import '../../../../core/utils/common/widgets/appbar/appbar.dart';
 import '../../../../core/utils/constants/image_strings.dart';
@@ -12,6 +16,7 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return Scaffold(
       appBar: CustomAppBar(
         showBackArrow: true,
@@ -20,96 +25,113 @@ class ProfileView extends StatelessWidget {
           style: Theme.of(context).textTheme.headlineMedium,
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(CustomSizes.defaultSpace),
-        child: Column(
-          children: [
-            SizedBox(
-              width: double.infinity,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const RoundedImage(
-                    width: 70,
-                    image: AppImages.user,
-                  ),
-                  const SizedBox(
-                    height: CustomSizes.spaceBtwItems,
-                  ),
-                  Text(
-                    'Chanage Profile Picture',
-                    style: Theme.of(context).textTheme.labelMedium,
-                  ),
-                ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(CustomSizes.defaultSpace),
+          child: Column(
+            children: [
+              SizedBox(
+                width: double.infinity,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Obx(() => CircleAvatar(
+                          radius: 40,
+                          backgroundImage:
+                              controller.user.value.profilePicture == ""
+                                  ? const AssetImage(AppImages.user)
+                                  : NetworkImage(
+                                      controller.user.value.profilePicture),
+                        )),
+                    const SizedBox(
+                      height: CustomSizes.spaceBtwItems,
+                    ),
+                    Text(
+                      'Chanage Profile Picture',
+                      style: Theme.of(context).textTheme.labelMedium,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(
-              height: CustomSizes.spaceBtwItems,
-            ),
-            const Divider(),
-            const SizedBox(
-              height: CustomSizes.spaceBtwItems,
-            ),
-            const SectionHeading(
-              title: "Profile Information",
-            ),
-            const SizedBox(
-              height: CustomSizes.spaceBtwItems,
-            ),
-            const ProfileMenu(
-              title: "Name",
-              value: 'Ali Diab',
-            ),
-            const ProfileMenu(
-              title: "Username",
-              value: 'Ali Diab',
-            ),
-            const Divider(),
-            const SizedBox(
-              height: CustomSizes.spaceBtwItems,
-            ),
-            const SectionHeading(
-              title: "Presonal Information",
-            ),
-            const SizedBox(
-              height: CustomSizes.spaceBtwItems,
-            ),
-            const ProfileMenu(
-              title: "User ID",
-              value: '1541',
-              icon: Iconsax.copy,
-            ),
-            const ProfileMenu(
-              title: "E-mail",
-              value: 'alidiab@gmail.com',
-            ),
-            const ProfileMenu(
-              title: "Phone Number",
-              value: '+2041054645',
-            ),
-            const ProfileMenu(
-              title: "Gender",
-              value: 'Male',
-            ),
-            const ProfileMenu(
-              title: "Date odf Birth",
-              value: '10/3/2003',
-            ),
-            const SizedBox(
-              height: CustomSizes.spaceBtwItems,
-            ),
-            const Divider(),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                "Close Account",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium!
-                    .apply(color: Colors.red),
+              const SizedBox(
+                height: CustomSizes.spaceBtwItems,
               ),
-            ),
-          ],
+              const Divider(),
+              const SizedBox(
+                height: CustomSizes.spaceBtwItems,
+              ),
+              const SectionHeading(
+                title: "Profile Information",
+              ),
+              const SizedBox(
+                height: CustomSizes.spaceBtwItems,
+              ),
+              Obx(
+                () => ProfileMenu(
+                  title: "Name",
+                  value: controller.user.value.fullName,
+                  onTap: () => Get.offNamed(AppRoute.changeProfileNameViewPath),
+                ),
+              ),
+              ProfileMenu(
+                title: "Username",
+                value: controller.user.value.userName,
+              ),
+              const Divider(),
+              const SizedBox(
+                height: CustomSizes.spaceBtwItems,
+              ),
+              const SectionHeading(
+                title: "Presonal Information",
+              ),
+              const SizedBox(
+                height: CustomSizes.spaceBtwItems,
+              ),
+              ProfileMenu(
+                title: "User ID",
+                value: controller.user.value.id,
+                icon: Iconsax.copy,
+                onTap: () async {
+                  await Clipboard.setData(
+                      ClipboardData(text: controller.user.value.id));
+                  Loaders.successSnackBar(
+                      title: "Done", message: "ID Copied to Clipboard");
+                },
+              ),
+              ProfileMenu(
+                title: "E-mail",
+                value: controller.user.value.email,
+              ),
+              const ProfileMenu(
+                title: "Phone Number",
+                value: "01023814981",
+              ),
+              const ProfileMenu(
+                title: "Gender",
+                value: 'Male',
+              ),
+              const ProfileMenu(
+                title: "Date odf Birth",
+                value: '10/3/2003',
+              ),
+              const SizedBox(
+                height: CustomSizes.spaceBtwItems,
+              ),
+              const Divider(),
+              TextButton(
+                onPressed: () async {
+                  controller.deletAccountWarinngPopup();
+                },
+                child: Text(
+                  "Close Account",
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .apply(color: Colors.red),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

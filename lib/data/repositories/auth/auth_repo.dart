@@ -1,6 +1,7 @@
 import 'package:e_commerce/core/utils/common/routes/app_router.dart';
 import 'package:e_commerce/core/utils/exceptions/firebase_auth_exceptions.dart';
 import 'package:e_commerce/core/utils/exceptions/platform_exceptions.dart';
+import 'package:e_commerce/data/repositories/user/user_repo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -17,6 +18,7 @@ class AuthenticationRepository extends GetxController {
   final deviceStorage = GetStorage();
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final _auth = FirebaseAuth.instance;
+  final authUser = FirebaseAuth.instance.currentUser;
   //Call Form main.dart on app launch
   @override
   void onReady() {
@@ -124,6 +126,41 @@ class AuthenticationRepository extends GetxController {
   }) async {
     try {
       return await _auth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw "Something went wrong , plz try again later";
+    }
+  }
+
+  // Delete Account
+  Future<void> deletAccount() async {
+    try {
+      await UserRepository.instance
+          .removeUserData(userID: _auth.currentUser!.uid);
+      await _auth.currentUser!.delete();
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw "Something went wrong , plz try again later";
+    }
+  }
+
+  //Re authentication email and password
+  Future<void> reAuthenticateEmailAndPasswordUser(
+      {required String email, required String password}) async {
+    try {
+      AuthCredential credential =
+          EmailAuthProvider.credential(email: email, password: password);
+      await _auth.currentUser!.reauthenticateWithCredential(credential);
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {

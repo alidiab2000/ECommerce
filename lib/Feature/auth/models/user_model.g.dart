@@ -6,15 +6,23 @@ part of 'user_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-UserModel _$UserModelFromJson(Map<String, dynamic> json) => UserModel(
-      email: json['email'] as String,
-      userName: json['userName'] as String,
-      firstName: json['firstName'] as String,
-      lastName: json['lastName'] as String,
-      phoneNumber: json['phoneNumber'] as String,
-      profilePicture: json['profilePicture'] as String,
-      id: json['id'] as String,
+UserModel _$UserModelFromSnapShot(
+    DocumentSnapshot<Map<String, dynamic>> document) {
+  if (document.data() != null) {
+    final data = document.data()!;
+    return UserModel(
+      email: data['email'] ?? "",
+      userName: data['userName'] ?? "",
+      firstName: data['firstName'] ?? "",
+      lastName: data['lastName'] ?? "",
+      phoneNumber: data['phoneNumber'] ?? "",
+      profilePicture: data['profilePicture'] ?? "",
+      id: document.id,
     );
+  } else {
+    return UserModel.empty();
+  }
+}
 
 Map<String, dynamic> _$UserModelToJson(UserModel instance) => <String, dynamic>{
       'id': instance.id,

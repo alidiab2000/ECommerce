@@ -96,7 +96,7 @@ class SignUpForm extends StatelessWidget {
                 await controller.registerWithEmailAndPassword();
               },
               child: const Text(
-                AppTexts.loginTitle,
+                "Register",
               ),
             ),
           ),

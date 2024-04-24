@@ -7,6 +7,7 @@ import '../../../../core/utils/constants/image_strings.dart';
 import '../../../../core/utils/helpers/network_manager.dart';
 import '../../../../core/utils/popups/fullscreen_loader.dart';
 import '../../../../core/utils/popups/loaders.dart';
+import '../../../shop/controllers/navigation_bar_menu.dart/navigation_bar_menu_controller.dart';
 
 class LoginController extends GetxController {
   final rememberMe = false.obs;
@@ -14,6 +15,7 @@ class LoginController extends GetxController {
   final localStorage = GetStorage();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final navigationMenuController = Get.put(NavigationMenuController());
   static LoginController get instance => Get.find();
 
   final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
@@ -64,6 +66,9 @@ class LoginController extends GetxController {
 
       // Show Success SnackBar
       Loaders.successSnackBar(title: "Login Successful", message: "Welcome");
+
+      navigationMenuController.selectedIndex.value = 0;
+
       // Go to Home Screen
       AuthenticationRepository.instance.screenRedirect();
     } catch (e) {
@@ -94,6 +99,8 @@ class LoginController extends GetxController {
 
       // Show Success SnackBar
       Loaders.successSnackBar(title: "Login Successful", message: "Welcome");
+      navigationMenuController.selectedIndex.value = 0;
+
       // Go to Home Screen
       AuthenticationRepository.instance.screenRedirect();
     } catch (e) {

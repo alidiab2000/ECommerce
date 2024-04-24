@@ -4,7 +4,9 @@ import 'package:e_commerce/Feature/shop/views/checkout/checkout_view.dart';
 import 'package:e_commerce/Feature/shop/views/order/order.dart';
 import 'package:e_commerce/Feature/shop/views/product_reviews/product_reviews_view.dart';
 import 'package:e_commerce/Feature/shop/views/sub_catergory/sub_caterogries_view.dart';
+import '../../../../Feature/auth/views/re_auth/re_auth_login_form.dart';
 import '../../../../Feature/personailzation/views/address/address_view.dart';
+import '../../../../Feature/personailzation/views/change_profile_name/change_profile_name.dart';
 import '../../../../Feature/personailzation/views/profile/profile.dart';
 import '../../../../Feature/personailzation/views/setttings/settings_view.dart';
 import '../../../../Feature/shop/views/all_brands/all_brands.dart';
@@ -46,7 +48,8 @@ class AppRoute {
   static const subCatergoriesViewPath = '/SubCatergoriesView';
   static const allProductsViewPath = '/AllProductsView';
   static const allBrnadsViewPath = '/AllBrandsView';
-
+  static const changeProfileNameViewPath = '/ChangeProfileNameView';
+  static const reAuthLoginFormViewPath = '/ReAuthLoginFormView';
   //[RouteList]
   static final routes = [
     GetPage(
@@ -136,6 +139,14 @@ class AppRoute {
     GetPage(
       name: AppRoute.allBrnadsViewPath,
       page: () => const AllBrandsView(),
-    )
+    ),
+    GetPage(
+      name: AppRoute.changeProfileNameViewPath,
+      page: () => const ChangeProfileNameView(),
+    ),
+    GetPage(
+      name: AppRoute.reAuthLoginFormViewPath,
+      page: () => const ReAuthLoginForm(),
+    ),
   ];
 }

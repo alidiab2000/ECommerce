@@ -19,7 +19,6 @@ class HeaderSection extends StatelessWidget {
       child: Column(
         children: [
           HomeAppBar(),
-          SizedBox(height: CustomSizes.defaultSpace),
           // Search Bar
           SearchTextField(),
           // Space

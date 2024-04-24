@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../../../core/utils/constants/colors.dart';
 import '../../../../core/utils/helpers/helper_functions.dart';
 import '../../controllers/navigation_bar_menu.dart/navigation_bar_menu_controller.dart';
@@ -26,7 +25,7 @@ class NavigationMenu extends StatelessWidget {
           backgroundColor: darkMode ? AppColors.black : AppColors.white,
           destinations: const [
             NavigationDestination(
-              icon: Icon(Iconsax.home),
+              icon: Icon(Icons.home),
               label: 'Home',
             ),
             NavigationDestination(
@@ -44,9 +43,7 @@ class NavigationMenu extends StatelessWidget {
           ],
         ),
       ),
-      body: Obx(
-        () => controller.screens[controller.selectedIndex.value],
-      ),
+      body: Obx(() => controller.screens[controller.selectedIndex.value]),
     );
   }
 }
