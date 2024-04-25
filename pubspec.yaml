@@ -27,6 +27,7 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 dependencies:
+  cached_network_image: ^3.3.1
   capped_progress_indicator: ^0.0.2
   carousel_slider: ^4.2.1
   cloud_firestore: ^4.15.10
@@ -35,7 +36,7 @@ dependencies:
   dio: ^5.4.0
   firebase_auth: ^4.18.0
   firebase_core: ^2.27.1
-  firebase_storage: ^11.6.11
+  firebase_storage: ^11.7.4
   flutter:
     sdk: flutter
   flutter_native_splash: ^2.3.10
@@ -45,6 +46,7 @@ dependencies:
   google_sign_in: ^6.2.1
   http: ^1.2.0
   iconsax: ^0.0.8
+  image_picker: ^1.1.0
   intl: ^0.18.1
   json_annotation: ^4.8.1
   logger: ^2.0.2+1

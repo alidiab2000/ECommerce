@@ -6,6 +6,7 @@ import 'package:e_commerce/data/repositories/user/user_repo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../../../core/utils/constants/image_strings.dart';
 import '../../../../core/utils/helpers/network_manager.dart';
@@ -16,6 +17,7 @@ class UserController extends GetxController {
   static UserController get instance => Get.find();
   final profileLoading = false.obs;
   final userRepository = Get.put(UserRepository());
+  final imageUploading = false.obs;
   final user = UserModel.empty().obs;
   //Re auth vars
   final reAuthFormKey = GlobalKey<FormState>();
@@ -23,7 +25,7 @@ class UserController extends GetxController {
   final reAuthEmailController = TextEditingController();
   final reAuthPasswordController = TextEditingController();
   @override
-  void onInit() async{
+  void onInit() async {
     super.onInit();
     await fetchUserData();
     debugPrint("Ali Diab");
@@ -43,21 +45,31 @@ class UserController extends GetxController {
 
   Future<void> saveUserData(UserCredential? userCredential) async {
     try {
-      if (userCredential != null) {
-        final nameParts =
-            UserModel.nameparts(userCredential.user!.displayName!);
-        final userName =
-            UserModel.generateUserName(userCredential.user!.displayName!);
-        final user = UserModel(
-          id: userCredential.user!.uid,
-          email: userCredential.user!.email ?? " ",
-          userName: userName,
-          firstName: nameParts[0],
-          lastName: nameParts.length > 1 ? nameParts.sublist(1).join(" ") : "",
-          phoneNumber: userCredential.user!.phoneNumber ?? "",
-          profilePicture: userCredential.user!.photoURL ?? "",
-        );
-        await userRepository.saveUserData(user: user);
+      //Refresh Data
+      await fetchUserData();
+
+      //If no record already exist
+      if (user.value.id.isEmpty) {
+        if (userCredential != null) {
+          //Convert Name To first and Last Name
+          final nameParts =
+              UserModel.nameparts(userCredential.user!.displayName!);
+          final userName =
+              UserModel.generateUserName(userCredential.user!.displayName!);
+
+          //Map Data
+          final user = UserModel(
+            id: userCredential.user!.uid,
+            email: userCredential.user!.email ?? " ",
+            userName: userName,
+            firstName: nameParts[0],
+            lastName:
+                nameParts.length > 1 ? nameParts.sublist(1).join(" ") : "",
+            phoneNumber: userCredential.user!.phoneNumber ?? "",
+            profilePicture: userCredential.user!.photoURL ?? "",
+          );
+          await userRepository.saveUserData(user: user);
+        }
       }
     } catch (e) {
       Loaders.warningSnackBar(
@@ -140,6 +152,39 @@ class UserController extends GetxController {
     } catch (e) {
       FullscreenLoader.stopLoading();
       Loaders.errorSnackBar(title: "Error", message: e.toString());
+    }
+  }
+
+  Future<void> uploadUserProfilePicture() async {
+    try {
+      final image = await ImagePicker().pickImage(
+        source: ImageSource.gallery,
+        imageQuality: 70,
+        maxHeight: 512,
+        maxWidth: 521,
+      );
+
+      if (image != null) {
+        imageUploading.value = true;
+        //Get image from gallery
+        final imageUrl = await userRepository.uploadImage(
+            path: "Users/Images/Profile/", image: image);
+        //Convert image url to json
+        final json = {"profilePicture": imageUrl};
+        //Update single field (User Image Profile)
+        userRepository.updateSingleField(json: json);
+
+        user.value.profilePicture = imageUrl;
+        user.refresh();
+        Loaders.successSnackBar(
+          title: "Success",
+          message: "Your Profile Picture Updated Successfully",
+        );
+      }
+    } catch (e) {
+      Loaders.warningSnackBar(title: "Warning", message: e.toString());
+    } finally {
+      imageUploading.value = false;
     }
   }
 }

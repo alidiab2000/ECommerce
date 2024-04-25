@@ -1,8 +1,10 @@
 import 'package:e_commerce/Feature/personailzation/controllers/user/user_controller.dart';
 import 'package:e_commerce/core/utils/common/routes/app_router.dart';
+import 'package:e_commerce/core/utils/loaders/shimmer.dart';
 import 'package:e_commerce/core/utils/popups/loaders.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import '../../../../core/utils/common/widgets/containers/circular_image_comtainer.dart';
 import '../../../../core/utils/common/widgets/text/section_heading.dart';
 import '../../../../core/utils/common/widgets/appbar/appbar.dart';
 import '../../../../core/utils/constants/image_strings.dart';
@@ -35,20 +37,34 @@ class ProfileView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Obx(() => CircleAvatar(
-                          radius: 40,
-                          backgroundImage:
-                              controller.user.value.profilePicture == ""
-                                  ? const AssetImage(AppImages.user)
-                                  : NetworkImage(
-                                      controller.user.value.profilePicture),
-                        )),
+                    Obx(
+                      () {
+                        final networkImage =
+                            controller.user.value.profilePicture;
+                        final image = networkImage.isEmpty
+                            ? AppImages.user
+                            : networkImage;
+                        return controller.imageUploading.value
+                            ? const ShimmerEffect(
+                                width: 80, height: 80, raduis: 80)
+                            : CircularImageContainer(
+                                image: image,
+                                isNetworkImage: networkImage.isNotEmpty,
+                                width: 100,
+                                height: 100,
+                              );
+                      },
+                    ),
                     const SizedBox(
                       height: CustomSizes.spaceBtwItems,
                     ),
-                    Text(
-                      'Chanage Profile Picture',
-                      style: Theme.of(context).textTheme.labelMedium,
+                    TextButton(
+                      child: Text(
+                        'Chanage Profile Picture',
+                        style: Theme.of(context).textTheme.labelMedium,
+                      ),
+                      onPressed: () async =>
+                          controller.uploadUserProfilePicture(),
                     ),
                   ],
                 ),

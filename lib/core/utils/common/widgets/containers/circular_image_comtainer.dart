@@ -1,3 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:e_commerce/core/utils/constants/image_strings.dart';
+import 'package:e_commerce/core/utils/loaders/shimmer.dart';
+
 import '../../../constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -28,15 +32,25 @@ class CircularImageContainer extends StatelessWidget {
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
         color: darkMode ? AppColors.black : AppColors.white,
+        borderRadius: BorderRadius.circular(100),
       ),
       child: Center(
-        child: Image(
-          image: isNetworkImage
-              ? NetworkImage(image)
-              : AssetImage(image) as ImageProvider,
-          fit: BoxFit.fill,
-          color: darkMode ? AppColors.white : AppColors.white,
-        ),
+        child: isNetworkImage
+            ? ClipRRect(
+                borderRadius: BorderRadius.circular(100),
+                child: CachedNetworkImage(
+                  imageUrl: image,
+                  fit: BoxFit.cover,
+                  progressIndicatorBuilder: (context, url, progress) =>
+                      const ShimmerEffect(width: 100, height: 100),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                ),
+              )
+            : Image(
+                image: const AssetImage(AppImages.user) as ImageProvider,
+                fit: BoxFit.fill,
+                color: darkMode ? AppColors.white : AppColors.white,
+              ),
       ),
     );
   }
