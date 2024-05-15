@@ -2,7 +2,7 @@ import 'package:e_commerce/Feature/personailzation/controllers/user/user_control
 import 'package:e_commerce/data/repositories/auth/auth_repo.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../core/utils/constants/image_strings.dart';
 import '../../../../core/utils/helpers/network_manager.dart';
 import '../../../../core/utils/popups/fullscreen_loader.dart';
@@ -12,7 +12,7 @@ import '../../../shop/controllers/navigation_bar_menu.dart/navigation_bar_menu_c
 class LoginController extends GetxController {
   final rememberMe = false.obs;
   final hidePassword = true.obs;
-  final localStorage = GetStorage();
+  late SharedPreferences prefs;
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final navigationMenuController = Get.put(NavigationMenuController());
@@ -20,17 +20,26 @@ class LoginController extends GetxController {
 
   final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   final userController = Get.put(UserController());
+
   @override
-  void onInit() {
-    emailController.text = localStorage.read("REMEMBER_ME_EMAIL");
-    passwordController.text = localStorage.read("REMEMBER_ME_PASSWORD");
+  void onInit() async {
     super.onInit();
+    prefs = await SharedPreferences.getInstance();
+    try {
+      bool? email = prefs.containsKey("REMEMBER_ME_EMAIL");
+      if (email ) {
+        emailController.text = prefs.getString("REMEMBER_ME_EMAIL") ?? '';
+        passwordController.text = prefs.getString("REMEMBER_ME_PASSWORD") ?? '';
+      }
+    } on Exception catch (e) {
+      debugPrint(e.toString());
+    }
   }
 
   Future<void> loginWithEmailAndPassword() async {
     try {
       FullscreenLoader.openLoadingDialog(
-          "We are prossessing your request", AppImages.docerAnimatioin);
+          "We are processing your request", AppImages.docerAnimatioin);
       // Check Internet Connection
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
@@ -43,13 +52,13 @@ class LoginController extends GetxController {
         return;
       }
 
-      // Remember Me  save email and password
+      // Remember Me save email and password
       if (rememberMe.value) {
-        localStorage.write(
+        prefs.setString(
           "REMEMBER_ME_EMAIL",
           emailController.text.trim(),
         );
-        localStorage.write(
+        prefs.setString(
           "REMEMBER_ME_PASSWORD",
           passwordController.text.trim(),
         );
@@ -80,7 +89,7 @@ class LoginController extends GetxController {
   Future<void> googleSignIn() async {
     try {
       FullscreenLoader.openLoadingDialog(
-          "We are prossessing your request", AppImages.docerAnimatioin);
+          "We are processing your request", AppImages.docerAnimatioin);
       // Check Internet Connection
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
@@ -92,7 +101,7 @@ class LoginController extends GetxController {
       final userCredential =
           await AuthenticationRepository.instance.signInWithGoogle();
 
-      //  Save Authanticated User data in the firestore
+      // Save Authenticated User data in the firestore
       userController.saveUserData(userCredential);
       // Stop Loading
       FullscreenLoader.stopLoading();

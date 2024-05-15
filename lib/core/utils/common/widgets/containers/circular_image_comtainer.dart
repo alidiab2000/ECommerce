@@ -1,10 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:e_commerce/core/utils/constants/image_strings.dart';
 import 'package:e_commerce/core/utils/loaders/shimmer.dart';
-
 import '../../../constants/sizes.dart';
 import 'package:flutter/material.dart';
-
 import '../../../constants/colors.dart';
 import '../../../helpers/helper_functions.dart';
 
@@ -16,12 +13,16 @@ class CircularImageContainer extends StatelessWidget {
     this.width = 56,
     this.height = 56,
     this.padding = CustomSizes.sm,
+    this.color,
+    this.fit = BoxFit.cover,
   });
   final String image;
   final double width;
   final double height;
   final double padding;
   final bool isNetworkImage;
+  final Color? color;
+  final BoxFit fit;
   @override
   Widget build(BuildContext context) {
     final darkMode = HelperFunctions.isDarkMode(context);
@@ -39,17 +40,22 @@ class CircularImageContainer extends StatelessWidget {
             ? ClipRRect(
                 borderRadius: BorderRadius.circular(100),
                 child: CachedNetworkImage(
+                  width: width,
+                  height: height,
                   imageUrl: image,
-                  fit: BoxFit.cover,
+                  fit: fit,
                   progressIndicatorBuilder: (context, url, progress) =>
                       const ShimmerEffect(width: 100, height: 100),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                  errorWidget: (context, url, error) => Icon(
+                    Icons.error_outline,
+                    color: darkMode ? AppColors.black : AppColors.white,
+                    size: 18,
+                  ),
                 ),
               )
             : Image(
-                image: const AssetImage(AppImages.user) as ImageProvider,
+                image: AssetImage(image) as ImageProvider,
                 fit: BoxFit.fill,
-                color: darkMode ? AppColors.white : AppColors.white,
               ),
       ),
     );

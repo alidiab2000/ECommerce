@@ -1,7 +1,8 @@
-import 'package:e_commerce/core/utils/constants/colors.dart';
-import 'package:e_commerce/core/utils/helpers/helper_functions.dart';
+ 
 import 'package:flutter/material.dart';
 
+import '../../../constants/colors.dart';
+import '../../../helpers/helper_functions.dart';
 import '../containers/circular_container.dart';
 
 class CustomChoiceChip extends StatelessWidget {

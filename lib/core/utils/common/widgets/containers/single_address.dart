@@ -1,9 +1,10 @@
-import 'package:e_commerce/core/utils/common/widgets/containers/round_container.dart';
-import 'package:e_commerce/core/utils/constants/colors.dart';
-import 'package:e_commerce/core/utils/constants/sizes.dart';
-import 'package:e_commerce/core/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../../../constants/colors.dart';
+import '../../../constants/sizes.dart';
+import '../../../helpers/helper_functions.dart';
+import 'round_container.dart';
 
 class SingleAddress extends StatelessWidget {
   const SingleAddress({super.key, required this.selectedAddress});

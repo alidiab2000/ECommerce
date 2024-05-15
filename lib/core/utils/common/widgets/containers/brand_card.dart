@@ -4,7 +4,6 @@ import 'circular_image_comtainer.dart';
 import 'produact_brand_name.dart';
 import '../../../constants/colors.dart';
 import '../../../constants/enums.dart';
-import '../../../constants/image_strings.dart';
 import '../../../constants/sizes.dart';
 
 class BrandCard extends StatelessWidget {
@@ -36,8 +35,8 @@ class BrandCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             // Image Of Brand
-            const CircularImageContainer(
-              image: AppImages.clothIcon,
+            CircularImageContainer(
+              image: brandImage,
             ),
 
             Expanded(

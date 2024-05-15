@@ -1,47 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-
 import '../../../../core/utils/common/routes/app_router.dart';
-
+import 'package:flutter/widgets.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+ 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
-  //variables
+  // Variables
   final pageController = PageController();
   final currentPageIndex = 0.obs;
+  late SharedPreferences prefs;
 
-  //Update Current Index when Page Scroll
-  void updatePageIndicator(index) => currentPageIndex.value = index;
+  @override
+  void onInit() async {
+    super.onInit();
+    prefs = await SharedPreferences.getInstance();
+  }
 
-  // Jump tp The sepcific dot selected page
-  void dotNavigationClick(index) {
+  // Update Current Index when Page Scroll
+  void updatePageIndicator(int index) => currentPageIndex.value = index;
+
+  // Jump to the specific dot selected page
+  void dotNavigationClick(int index) {
     currentPageIndex.value = index;
     pageController.jumpToPage(index);
   }
 
-  // Update current inex & Jump to next page
+  // Update current index & Jump to next page
   void nextPage() {
     if (currentPageIndex.value == 2) {
       var isFirstTime = "isFirstTime";
-      final storage = GetStorage();
-      storage.write(isFirstTime, false);
-      Get.offAllNamed(
-        AppRoute.loginViewPath,
-      );
+
+      prefs.setBool(isFirstTime, false);
+      Get.offAllNamed(AppRoute.loginViewPath);
     } else {
-      pageController.jumpToPage(
-        currentPageIndex.value + 1,
-      );
+      pageController.jumpToPage(currentPageIndex.value + 1);
     }
   }
 
-  //Update Current Index and Jump To last page
+  // Update Current Index and Jump To last page
   void skipOnBoarding() {
     var isFirstTime = "isFirstTime";
-    final storage = GetStorage();
-    storage.write(isFirstTime, false);
-    Get.offAllNamed(
-      AppRoute.loginViewPath,
-    );
+    prefs.setBool(isFirstTime, false);
+    Get.offAllNamed(AppRoute.loginViewPath);
   }
 }

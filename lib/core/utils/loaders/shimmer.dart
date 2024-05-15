@@ -9,7 +9,7 @@ class ShimmerEffect extends StatelessWidget {
     super.key,
     required this.width,
     required this.height,
-      this.raduis = 15 ,
+    this.raduis = 15,
     this.color,
   });
   final double width, height, raduis;

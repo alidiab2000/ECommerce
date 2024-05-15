@@ -1,3 +1,4 @@
+import 'package:e_commerce/core/utils/common/widgets/containers/circular_image_comtainer.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/constants/colors.dart';
@@ -9,9 +10,11 @@ class CategoryItem extends StatelessWidget {
     super.key,
     required this.image,
     required this.catergoryName,
+    this.isNetworkImage = true,
     required this.onTap,
   });
   final String image;
+  final bool isNetworkImage;
   final String catergoryName;
   final VoidCallback onTap;
 
@@ -25,20 +28,20 @@ class CategoryItem extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              width: 55,
-              height: 55,
-              padding: const EdgeInsets.all(CustomSizes.sm),
-              decoration: BoxDecoration(
-                color: dark ? AppColors.white : AppColors.black,
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: Center(
-                child: Image.asset(
-                  image,
-                  fit: BoxFit.fill,
+                width: 56,
+                height: 56,
+                padding: const EdgeInsets.all(2),
+                decoration: BoxDecoration(
+                  color: dark ? AppColors.white : AppColors.black,
+                  borderRadius: BorderRadius.circular(100),
                 ),
-              ),
-            ),
+                child: CircularImageContainer(
+                  image: image,
+                  isNetworkImage: isNetworkImage,
+                  fit: BoxFit.fitWidth,
+                  color: dark ? AppColors.black : AppColors.white,
+                  padding: 0,
+                )),
             const SizedBox(
               height: CustomSizes.spaceBtwItems / 2,
             ),

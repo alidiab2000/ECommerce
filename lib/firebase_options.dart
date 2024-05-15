@@ -63,19 +63,23 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCJXK-M67vMvFu7fHcGEEPtEosyt6EBnKk',
-    appId: '1:89017853345:ios:6858bc7d0a23c43bbcd7e0',
+    appId: '1:89017853345:ios:d63f5b0f4ae0813ebcd7e0',
     messagingSenderId: '89017853345',
     projectId: 'e-commerce-7b83a',
     storageBucket: 'e-commerce-7b83a.appspot.com',
-    iosBundleId: 'com.example.demo',
+    androidClientId: '89017853345-038lqguicrjrf491oc026sv0tpcvu33n.apps.googleusercontent.com',
+    iosClientId: '89017853345-lham1erh66jarrk02vhg12554bt32ati.apps.googleusercontent.com',
+    iosBundleId: 'com.example.colona',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyCJXK-M67vMvFu7fHcGEEPtEosyt6EBnKk',
-    appId: '1:89017853345:ios:99e45d89561481fbbcd7e0',
+    appId: '1:89017853345:ios:cbb3567a0f90bb89bcd7e0',
     messagingSenderId: '89017853345',
     projectId: 'e-commerce-7b83a',
     storageBucket: 'e-commerce-7b83a.appspot.com',
-    iosBundleId: 'com.example.demo.RunnerTests',
+    androidClientId: '89017853345-038lqguicrjrf491oc026sv0tpcvu33n.apps.googleusercontent.com',
+    iosClientId: '89017853345-ukkrmgav9fqcf40mloa7bg3g8k3jd8qm.apps.googleusercontent.com',
+    iosBundleId: 'com.example.colona.RunnerTests',
   );
 }

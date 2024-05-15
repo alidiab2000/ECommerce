@@ -1,4 +1,4 @@
-import 'package:e_commerce/bindings/genral_bindings.dart';
+  import 'package:e_commerce/bindings/genral_bindings.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'Feature/shop/views/navigationBarMenu/navigation_menu.dart';

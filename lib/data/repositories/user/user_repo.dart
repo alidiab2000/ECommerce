@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce/Feature/auth/models/user_model.dart';
 import 'package:e_commerce/data/repositories/auth/auth_repo.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -20,11 +21,14 @@ class UserRepository extends GetxController {
     try {
       await _db.collection("Users").doc(user.id).set(user.toJson());
     } on FirebaseException catch (e) {
+      debugPrint(e.toString());
       throw TFirebaseException(e.code).message;
     } on PlatformException catch (e) {
+      debugPrint(e.toString());
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw "Something went wrong , plz try again later";
+      debugPrint(e.toString());
+      throw "Something went wrong, please try again later";
     }
   }
 
@@ -40,11 +44,16 @@ class UserRepository extends GetxController {
         return UserModel.empty();
       }
     } on FirebaseException catch (e) {
+      debugPrint(e.toString());
       throw TFirebaseException(e.code).message;
     } on PlatformException catch (e) {
+      debugPrint(e.toString());
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw "Something went wrong , plz try again later";
+      
+      
+      debugPrint(e.toString());
+      throw "Something went wrong, please try again later";
     }
   }
 
@@ -55,11 +64,14 @@ class UserRepository extends GetxController {
           .doc(updateUser.id)
           .update(updateUser.toJson());
     } on FirebaseException catch (e) {
+      debugPrint(e.toString());
       throw TFirebaseException(e.code).message;
     } on PlatformException catch (e) {
+      debugPrint(e.toString());
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw "Something went wrong , plz try again later";
+      debugPrint(e.toString());
+      throw "Something went wrong, please try again later";
     }
   }
 
@@ -70,11 +82,14 @@ class UserRepository extends GetxController {
           .doc(AuthenticationRepository.instance.authUser!.uid)
           .update(json);
     } on FirebaseException catch (e) {
+      debugPrint(e.toString());
       throw TFirebaseException(e.code).message;
     } on PlatformException catch (e) {
+      debugPrint(e.toString());
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw "Something went wrong , plz try again later";
+      debugPrint(e.toString());
+      throw "Something went wrong, please try again later";
     }
   }
 
@@ -82,11 +97,14 @@ class UserRepository extends GetxController {
     try {
       await _db.collection("Users").doc(userID).delete();
     } on FirebaseException catch (e) {
+      debugPrint(e.toString());
       throw TFirebaseException(e.code).message;
     } on PlatformException catch (e) {
+      debugPrint(e.toString());
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw "Something went wrong , plz try again later";
+      debugPrint(e.toString());
+      throw "Something went wrong, please try again later";
     }
   }
 
@@ -97,11 +115,14 @@ class UserRepository extends GetxController {
       await ref.putFile(File(image.path));
       return await ref.getDownloadURL();
     } on FirebaseException catch (e) {
+      debugPrint(e.toString());
       throw TFirebaseException(e.code).message;
     } on PlatformException catch (e) {
+      debugPrint(e.toString());
       throw TPlatformException(e.code).message;
     } catch (e) {
-      throw "Something went wrong , plz try again later";
+      debugPrint(e.toString());
+      throw "Something went wrong, please try again later";
     }
   }
 }

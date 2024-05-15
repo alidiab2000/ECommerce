@@ -46,12 +46,13 @@ class ProfileView extends StatelessWidget {
                             : networkImage;
                         return controller.imageUploading.value
                             ? const ShimmerEffect(
-                                width: 80, height: 80, raduis: 80)
+                                width: 100, height: 100, raduis: 100)
                             : CircularImageContainer(
                                 image: image,
                                 isNetworkImage: networkImage.isNotEmpty,
                                 width: 100,
                                 height: 100,
+                                color: Colors.amber.withOpacity(0),
                               );
                       },
                     ),

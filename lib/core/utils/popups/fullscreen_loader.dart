@@ -1,8 +1,10 @@
-import 'package:e_commerce/core/utils/constants/colors.dart';
-import 'package:e_commerce/core/utils/helpers/helper_functions.dart';
-import 'package:e_commerce/core/utils/loaders/animation_loader.dart';
+ 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../constants/colors.dart';
+import '../helpers/helper_functions.dart';
+import '../loaders/animation_loader.dart';
 
 class FullscreenLoader {
   static void openLoadingDialog(String? text, String? animation) {

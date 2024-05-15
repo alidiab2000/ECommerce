@@ -1,4 +1,4 @@
-package com.example.demo
+package com.example.colona
 
 import io.flutter.embedding.android.FlutterActivity
 

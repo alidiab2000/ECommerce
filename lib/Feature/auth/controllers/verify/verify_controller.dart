@@ -20,7 +20,7 @@ class VerifiyController extends GetxController {
   // Send Email Verification link
   Future<void> sendEmailVerificatiion() async {
     try {
-      await AuthenticationRepository.instance.sendEmailVerifivation();
+      await AuthenticationRepository.instance.sendEmailVerification();
       Loaders.successSnackBar(title: "Email Sent", message: "Check your mail");
     } catch (e) {
       Loaders.errorSnackBar(title: "Oh snap", message: e.toString());
@@ -45,9 +45,7 @@ class VerifiyController extends GetxController {
               onPressed: AuthenticationRepository.instance.screenRedirect,
             ),
           );
-        } else {
-          debugPrint("===================Email not verified=================");
-        }
+        } 
       },
     );
   }

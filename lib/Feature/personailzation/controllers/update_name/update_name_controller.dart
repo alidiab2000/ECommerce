@@ -15,7 +15,9 @@ class UpdateNameController extends GetxController {
   final updateNameFormKey = GlobalKey<FormState>();
   final userRepository = Get.put(UserRepository());
   final userController = UserController.instance;
+  final isUserNameChanged = false.obs;
 
+  static UpdateNameController get instance => Get.find();
   @override
   void onInit() {
     initializeName();
@@ -29,6 +31,7 @@ class UpdateNameController extends GetxController {
 
   Future<void> updateUserName() async {
     try {
+      isUserNameChanged.value = true;
       FullscreenLoader.openLoadingDialog(
           "We are prossessing your request", AppImages.docerAnimatioin);
       // Check Internet Connection
@@ -56,6 +59,8 @@ class UpdateNameController extends GetxController {
     } catch (e) {
       FullscreenLoader.stopLoading();
       Loaders.errorSnackBar(title: "Error", message: e.toString());
+    } finally {
+      isUserNameChanged.value = false;
     }
   }
 }
