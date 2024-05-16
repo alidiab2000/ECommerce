@@ -28,7 +28,6 @@ class UserController extends GetxController {
   void onInit() async {
     super.onInit();
     await fetchUserData();
-    debugPrint("Ali Diab");
   }
 
   Future<void> fetchUserData() async {
