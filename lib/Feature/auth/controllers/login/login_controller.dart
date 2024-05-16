@@ -25,15 +25,12 @@ class LoginController extends GetxController {
   void onInit() async {
     super.onInit();
     prefs = await SharedPreferences.getInstance();
-    try {
-      bool? email = prefs.containsKey("REMEMBER_ME_EMAIL");
-      if (email ) {
+     
+      if (prefs.containsKey("REMEMBER_ME_EMAIL")) {
         emailController.text = prefs.getString("REMEMBER_ME_EMAIL") ?? '';
         passwordController.text = prefs.getString("REMEMBER_ME_PASSWORD") ?? '';
       }
-    } on Exception catch (e) {
-      debugPrint(e.toString());
-    }
+    
   }
 
   Future<void> loginWithEmailAndPassword() async {
