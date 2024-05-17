@@ -1,4 +1,4 @@
-# demo
+# ecommerce
 
 A new Flutter project.
 

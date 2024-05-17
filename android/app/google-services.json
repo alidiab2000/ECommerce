@@ -48,6 +48,42 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89017853345:android:3450d07d42fcc910bcd7e0",
+        "android_client_info": {
+          "package_name": "com.example.ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "89017853345-dkp5ulatbnbjrm6orr63gugbkn4k2gq6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3YmmmWA8C8gPkFb-SA4IfyHjsbv8jiGo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "89017853345-dkp5ulatbnbjrm6orr63gugbkn4k2gq6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "89017853345-10fq4l16uauk68sh2m0c6c4ogt7i0qeg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.demo"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"
