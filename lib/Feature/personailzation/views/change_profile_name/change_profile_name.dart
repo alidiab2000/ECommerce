@@ -20,7 +20,7 @@ class ChangeProfileNameView extends StatelessWidget {
       appBar: CustomAppBar(
         title: const Text("Change Profile Name"),
         showBackArrow: true,
-        backArrowOnPressed: () => Get.offNamed(AppRoute.profileViewPath),
+        backArrowOnPressed: ()  => Get.offNamed(AppRoute.profileViewPath),
       ),
       body: Form(
         key: updateNamecontroller.updateNameFormKey,
