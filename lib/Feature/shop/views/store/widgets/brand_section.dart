@@ -6,6 +6,7 @@ import '../../../../../core/utils/common/widgets/tab_bar/tabbar.dart';
 import '../../../../../core/utils/common/textfields/search_text_field.dart';
 import '../../../../../core/utils/constants/sizes.dart';
 import '../../../../../core/utils/common/widgets/text/section_heading.dart';
+import '../../../controllers/categories_controller/categories_controller.dart';
 import 'store_grid_layout.dart';
 
 class BrandSection extends StatelessWidget {
@@ -15,6 +16,8 @@ class BrandSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categories = CategoriesController.instance.featuredCategories;
+
     return SliverAppBar(
       expandedHeight: 400,
       automaticallyImplyLeading: false,
@@ -45,14 +48,12 @@ class BrandSection extends StatelessWidget {
           ],
         ),
       ),
-      bottom: const CustomTabBar(
-        tabs: [
-          Tab(child: Text('Sports')),
-          Tab(child: Text('Furniture')),
-          Tab(child: Text('Electronics')),
-          Tab(child: Text('Clothes')),
-          Tab(child: Text('Shoses')),
-        ],
+      bottom: CustomTabBar(
+        tabs: categories
+            .map(
+              (category) => Tab(child: Text(category.name)),
+            )
+            .toList(),
       ),
     );
   }

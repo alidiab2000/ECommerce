@@ -38,9 +38,8 @@ class CategoryItem extends StatelessWidget {
                 child: CircularImageContainer(
                   image: image,
                   isNetworkImage: isNetworkImage,
-                  fit: BoxFit.fitWidth,
-                  color: dark ? AppColors.black : AppColors.white,
-                  padding: 0,
+                  imageColor: dark ? AppColors.white : AppColors.black,
+                  padding: 5,
                 )),
             const SizedBox(
               height: CustomSizes.spaceBtwItems / 2,
@@ -51,7 +50,7 @@ class CategoryItem extends StatelessWidget {
                   .textTheme
                   .labelMedium!
                   .apply(color: AppColors.white),
-            )
+            ),
           ],
         ),
       ),

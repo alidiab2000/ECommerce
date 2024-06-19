@@ -6,11 +6,12 @@ class SettingMenuTile extends StatelessWidget {
       {super.key,
       required this.icon,
       required this.title,
-      required this.subtitle,
+      this.subtitle,
       this.trailing,
       this.onTap});
   final IconData icon;
-  final String title, subtitle;
+  final String title;
+  final String? subtitle;
   final Widget? trailing;
   final VoidCallback? onTap;
   @override
@@ -27,10 +28,12 @@ class SettingMenuTile extends StatelessWidget {
           title,
           style: Theme.of(context).textTheme.titleMedium,
         ),
-        subtitle: Text(
-          subtitle,
-          style: Theme.of(context).textTheme.labelMedium,
-        ),
+        subtitle: subtitle == null
+            ? null
+            : Text(
+                subtitle!,
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
         trailing: trailing,
       ),
     );

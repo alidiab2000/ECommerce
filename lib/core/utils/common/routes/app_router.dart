@@ -1,4 +1,5 @@
 import 'package:e_commerce/Feature/personailzation/views/address/add_new_address_view.dart';
+import 'package:e_commerce/Feature/personailzation/views/setttings/load_data.dart';
 import 'package:e_commerce/Feature/shop/views/cart/cart_view.dart';
 import 'package:e_commerce/Feature/shop/views/checkout/checkout_view.dart';
 import 'package:e_commerce/Feature/shop/views/order/order.dart';
@@ -50,6 +51,8 @@ class AppRoute {
   static const allBrnadsViewPath = '/AllBrandsView';
   static const changeProfileNameViewPath = '/ChangeProfileNameView';
   static const reAuthLoginFormViewPath = '/ReAuthLoginFormView';
+  static const loaddataPath = '/LoadDataPath';
+
   //[RouteList]
   static final routes = [
     GetPage(
@@ -147,6 +150,10 @@ class AppRoute {
     GetPage(
       name: AppRoute.reAuthLoginFormViewPath,
       page: () => const ReAuthLoginForm(),
+    ),
+    GetPage(
+      name: AppRoute.loaddataPath,
+      page: () => const LoadDataView(),
     ),
   ];
 }

@@ -1,7 +1,4 @@
-import 'package:e_commerce/Feature/shop/models/category_model/category_model.dart';
-import 'package:e_commerce/core/utils/popups/loaders.dart';
-import 'package:e_commerce/data/dummy_data/dummy_data.dart';
-import 'package:e_commerce/data/repositories/categoryies/categories_repo.dart';
+import 'package:e_commerce/data/repositories/banners/banner_repo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -10,34 +7,31 @@ import 'package:get/get.dart';
 import '../../../../core/utils/exceptions/firebase_auth_exceptions.dart';
 import '../../../../core/utils/exceptions/firebase_exceptions.dart';
 import '../../../../core/utils/exceptions/platform_exceptions.dart';
+import '../../../../core/utils/popups/loaders.dart';
+import '../../../../data/dummy_data/dummy_data.dart';
+import '../../models/banner_model/banner_model.dart';
 
-class CategoriesController extends GetxController {
-  static CategoriesController get instance => Get.find();
-  final CategoriesRepo _categoriesRepo = Get.put(CategoriesRepo());
-  final isLoading = false.obs;
-  RxList<CategoryModel> allCategories = <CategoryModel>[].obs;
-  RxList<CategoryModel> featuredCategories = <CategoryModel>[].obs;
-
+class BannerController extends GetxController {
+  static BannerController get instance => Get.find();
+  final bannerLoading = false.obs;
+  final banners = <BannerModel>[].obs;
+  final _bannerRepo = Get.put(BannerRepo());
+  final caruselSliderCurrnetIndex = 0.obs;
+  void updatePageIndecator(index) => caruselSliderCurrnetIndex.value = index;
   @override
-  void onInit() {
+  void onInit() async {
+    await fetchBanner();
     super.onInit();
-    fetchCategories();
   }
 
-  Future<void> fetchCategories() async {
+  Future<void> fetchBanner() async {
     try {
-      isLoading.value = true;
-      // Fetch Categories from firestore
-      final categories = await _categoriesRepo.getAllCategories();
-      // Assign (Update) Categories
-      allCategories.assignAll(categories);
-      // Get Featured Categories
-      featuredCategories.assignAll(allCategories
-          .where(
-            (category) => category.isFeatured && category.parentId.isEmpty,
-          )
-          .take(8)
-          .toList());
+      bannerLoading.value = true;
+
+      final banners = await _bannerRepo.fetchBanners();
+
+      //Assign Banners
+      this.banners.assignAll(banners);
     } on FirebaseAuthException catch (e) {
       debugPrint(e.toString());
       throw TFirebaseAuthException(e.code).message;
@@ -51,15 +45,15 @@ class CategoriesController extends GetxController {
       debugPrint(e.toString());
       Loaders.errorSnackBar(title: "Error", message: e.toString());
     } finally {
-      isLoading.value = false;
+      bannerLoading.value = false;
     }
   }
 
   Future<void> uploadDummyData() async {
     try {
       // Perform upload here
-      final categoriesDummyData = DummyData.categories;
-      await _categoriesRepo.uploadDummyData(categoriesDummyData);
+      final bannerDummyData = DummyData.banners;
+      await _bannerRepo.uploadDummyData(bannerDummyData);
     } on FirebaseAuthException catch (e) {
       debugPrint(e.toString());
       throw TFirebaseAuthException(e.code).message;

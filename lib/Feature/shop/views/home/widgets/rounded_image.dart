@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/constants/sizes.dart';
@@ -30,22 +31,28 @@ class RoundedImage extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: width,
-        height: height,
-        padding: padding,
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          border: border,
-          borderRadius: applyBorderRadius
-              ? BorderRadius.circular(borderRadius)
-              : BorderRadius.zero,
-        ),
-        child: Image(
-          image: isNetworkImage
-              ? NetworkImage(image)
-              : AssetImage(image) as ImageProvider,
-        ),
-      ),
+          width: width,
+          height: height,
+          padding: padding,
+          decoration: BoxDecoration(
+            color: backgroundColor,
+            border: border,
+            borderRadius: applyBorderRadius
+                ? BorderRadius.circular(borderRadius)
+                : BorderRadius.zero,
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: CachedNetworkImage(
+              width: width,
+              height: height,
+              imageUrl: image,
+              errorWidget: (context, url, error) => const Icon(
+                Icons.error_outline,
+                size: 18,
+              ),
+            ),
+          )),
     );
   }
 }

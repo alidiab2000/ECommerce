@@ -1,3 +1,4 @@
+import 'package:e_commerce/Feature/shop/controllers/categories_controller/categories_controller.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/common/widgets/appbar/appbar.dart';
@@ -10,8 +11,9 @@ class StoreView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categories = CategoriesController.instance.featuredCategories;
     return DefaultTabController(
-      length: 5,
+      length: categories.length,
       child: Scaffold(
         appBar: CustomAppBar(
           showBackArrow: false,
@@ -27,14 +29,12 @@ class StoreView extends StatelessWidget {
           headerSliverBuilder: (_, innerBoxScrollabe) => [
             const BrandSection(),
           ],
-          body: const TabBarView(
-            children: [
-              CategoryTab(),
-              CategoryTab(),
-              CategoryTab(),
-              CategoryTab(),
-              CategoryTab(),
-            ],
+          body: TabBarView(
+            children: categories
+                .map(
+                  (category) => CategoryTab(category: category),
+                )
+                .toList(),
           ),
         ),
       ),

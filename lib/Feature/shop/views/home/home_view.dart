@@ -3,7 +3,6 @@ import 'package:e_commerce/core/utils/common/widgets/text/section_heading.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/utils/common/widgets/products/product_card/product_card_vertiacl.dart';
-import '../../../../core/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/utils/common/layouts/grid_view.dart';
 import '../../../../core/utils/constants/sizes.dart';
@@ -26,13 +25,7 @@ class HomeView extends StatelessWidget {
               padding: const EdgeInsets.all(CustomSizes.defaultSpace),
               child: Column(
                 children: [
-                  const PromoSlider(
-                    banners: [
-                      AppImages.promoBanner1,
-                      AppImages.promoBanner2,
-                      AppImages.promoBanner3,
-                    ],
-                  ),
+                  const PromoSlider(),
                   const SizedBox(height: CustomSizes.spaceBtwSections),
                   SectionHeading(
                     title: "Popular Products",

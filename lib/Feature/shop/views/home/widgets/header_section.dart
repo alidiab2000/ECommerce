@@ -35,8 +35,7 @@ class HeaderSection extends StatelessWidget {
                 // Space
                 SizedBox(height: CustomSizes.spaceBtwItems),
                 // == Categories
-                //TODO Passing List of Catergory
-                CatergoryListView(),
+                 CatergoryListView(),
               ],
             ),
           ),

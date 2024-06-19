@@ -93,10 +93,11 @@ class SettingsView extends StatelessWidget {
                   const SizedBox(
                     height: CustomSizes.spaceBtwSections,
                   ),
-                  const SettingMenuTile(
+                  SettingMenuTile(
                     icon: Iconsax.document_upload,
                     title: "Load Data",
                     subtitle: 'Upload data to your cloud firebase',
+                    onTap: () => Get.toNamed(AppRoute.loaddataPath),
                   ),
                   SettingMenuTile(
                     icon: Iconsax.location,

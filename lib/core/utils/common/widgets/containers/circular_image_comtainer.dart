@@ -15,6 +15,7 @@ class CircularImageContainer extends StatelessWidget {
     this.padding = CustomSizes.sm,
     this.color,
     this.fit = BoxFit.cover,
+    this.imageColor,
   });
   final String image;
   final double width;
@@ -22,6 +23,7 @@ class CircularImageContainer extends StatelessWidget {
   final double padding;
   final bool isNetworkImage;
   final Color? color;
+  final Color? imageColor;
   final BoxFit fit;
   @override
   Widget build(BuildContext context) {
@@ -43,6 +45,7 @@ class CircularImageContainer extends StatelessWidget {
                   width: width,
                   height: height,
                   imageUrl: image,
+                  color: imageColor,
                   fit: fit,
                   progressIndicatorBuilder: (context, url, progress) =>
                       const ShimmerEffect(width: 100, height: 100),

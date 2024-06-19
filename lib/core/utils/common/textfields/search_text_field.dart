@@ -1,5 +1,4 @@
-import '../../helpers/helper_functions.dart';
-
+ 
 import '../../constants/colors.dart';
 import '../../constants/sizes.dart';
 import '../../device/device_utility.dart';
@@ -13,7 +12,6 @@ class SearchTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool darkMode = HelperFunctions.isDarkMode(context);
     return SizedBox(
       width: DeviceUtils.getScreenWidth(context) * 0.9,
       child: TextField(
@@ -28,7 +26,7 @@ class SearchTextField extends StatelessWidget {
             ),
           ),
           focusColor: Colors.black,
-          fillColor: darkMode ? Colors.white : AppColors.black,
+          fillColor: Colors.white,
           filled: true,
           prefixIcon: const Icon(Iconsax.search_normal),
           hintText: "Search in Store",
