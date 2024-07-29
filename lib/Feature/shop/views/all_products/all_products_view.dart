@@ -2,15 +2,18 @@ import 'package:e_commerce/core/utils/common/layouts/grid_view.dart';
 import 'package:e_commerce/core/utils/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce/core/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../core/utils/common/widgets/products/product_card/product_card_vertiacl.dart';
+import '../../controllers/product_controller/product_controller.dart';
 
 class AllProductsView extends StatelessWidget {
   const AllProductsView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ProductController());
     return Scaffold(
       appBar: const CustomAppBar(
         showBackArrow: true,
@@ -39,7 +42,7 @@ class AllProductsView extends StatelessWidget {
               ),
               const SizedBox(height: CustomSizes.spaceBtwSections),
               GridLayout(
-                itemBuilder: (_, index) => const ProductCardVertiacl(),
+                itemBuilder: (_, index) =>   ProductCardVertiacl(product: controller.featuredProducts[index],),
                 crossAxisCount: 2,
                 itemCount: 8,
               )

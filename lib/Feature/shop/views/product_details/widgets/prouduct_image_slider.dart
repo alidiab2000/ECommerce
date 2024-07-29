@@ -10,10 +10,8 @@ import '../../../../../core/utils/helpers/helper_functions.dart';
 import '../../home/widgets/rounded_image.dart';
 
 class ProductImageSlider extends StatelessWidget {
-  const ProductImageSlider({
-    super.key,
-  });
-
+  const ProductImageSlider({super.key, required this.images});
+  final List<String> images;
   @override
   Widget build(BuildContext context) {
     final darkMode = HelperFunctions.isDarkMode(context);
@@ -41,18 +39,23 @@ class ProductImageSlider extends StatelessWidget {
               ],
             ),
             Positioned(
-              bottom: 40,
-              left: 40,
+              right: 0,
+              left: CustomSizes.defaultSpace,
+              bottom: 30,
               child: SizedBox(
-                height: 60,
+                height: 70,
                 child: ListView.separated(
+                  physics: const AlwaysScrollableScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
-                  itemCount: 4,
+                  itemCount: images.length,
                   itemBuilder: (_, index) => RoundedImage(
-                    width: 60,
+                    isNetworkImage: true,
+                    width: 70,
+                    backgroundColor:
+                        darkMode ? AppColors.dark : AppColors.white,
                     border: Border.all(color: AppColors.primary),
-                    image: AppImages.productImage3,
+                    image: images[index],
                   ),
                   separatorBuilder: (_, index) => const SizedBox(
                     width: CustomSizes.spaceBtwItems,

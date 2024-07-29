@@ -5,7 +5,7 @@ import '../../../../../core/utils/common/widgets/containers/round_container.dart
 import '../../../../../core/utils/common/widgets/text/product_price.dart';
 import '../../../../../core/utils/constants/colors.dart';
 import '../../../../../core/utils/constants/sizes.dart';
- import '../../../../../core/utils/common/widgets/text/section_heading.dart';
+import '../../../../../core/utils/common/widgets/text/section_heading.dart';
 import 'product_title_text.dart';
 
 class ProductAttributes extends StatelessWidget {
@@ -97,7 +97,7 @@ class ProductAttributes extends StatelessWidget {
                 CustomChoiceChip(
                     text: '28', selected: true, onSelected: (value) {}),
                 CustomChoiceChip(
-                    text: '29', selected: false, onSelected: (value) {}),
+                    text: '29', selected: true, onSelected: (value) {}),
                 CustomChoiceChip(
                     text: '30', selected: false, onSelected: (value) {}),
                 CustomChoiceChip(

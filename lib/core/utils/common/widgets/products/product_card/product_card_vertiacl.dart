@@ -1,3 +1,5 @@
+import 'package:e_commerce/Feature/shop/controllers/product_controller/product_controller.dart';
+import 'package:e_commerce/Feature/shop/models/product_model/product_model.dart';
 import 'package:e_commerce/core/utils/common/widgets/text/offer_text.dart';
 import 'package:flutter/cupertino.dart';
 import '../../../../constants/enums.dart';
@@ -10,7 +12,6 @@ import '../../text/product_price.dart';
 import '../../text/product_title.dart';
 import '../../../styles/shadow_style.dart';
 import '../../../../constants/colors.dart';
-import '../../../../constants/image_strings.dart';
 import '../../../../constants/sizes.dart';
 import '../../../../helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -18,13 +19,15 @@ import '../../containers/produact_brand_name.dart';
 import '../../../routes/app_router.dart';
 
 class ProductCardVertiacl extends StatelessWidget {
-  const ProductCardVertiacl({super.key});
-
+  const ProductCardVertiacl({super.key, required this.product});
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
     final darkMode = HelperFunctions.isDarkMode(context);
+    final controller = ProductController.instance;
     return GestureDetector(
-      onTap: () => Get.toNamed(AppRoute.productDetailViewPath),
+      onTap: () =>
+          Get.toNamed(AppRoute.productDetailViewPath, arguments: product),
       child: Container(
         width: 140,
         padding: const EdgeInsets.all(1),
@@ -51,20 +54,29 @@ class ProductCardVertiacl extends StatelessWidget {
               ),
               child: Stack(
                 children: [
-                  const Positioned(
+                  Positioned(
                     right: 0,
                     left: 0,
                     top: 0,
                     bottom: 0,
                     child: Padding(
-                      padding: EdgeInsets.only(top: CustomSizes.sm),
+                      padding: const EdgeInsets.only(top: CustomSizes.sm),
                       child: RoundedImage(
-                        image: AppImages.productImage1,
+                        isNetworkImage: true,
+                        image: product.thumbnail,
                       ),
                     ),
                   ),
                   // Offer
-                  const Positioned(top: 10, child: OfferText(offer: "20"))
+                  Positioned(
+                      top: 10,
+                      child: OfferText(
+                          offer: controller
+                              .calculateSalesPercentage(
+                                product.price,
+                                product.salePrice,
+                              )
+                              .toString()))
                   //Fav Icon
                   ,
                   Positioned(
@@ -78,19 +90,19 @@ class ProductCardVertiacl extends StatelessWidget {
             const SizedBox(
               height: CustomSizes.defaultSpace / 2,
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: CustomSizes.sm),
+            Padding(
+              padding: const EdgeInsets.only(left: CustomSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ProductTitle(
-                    title: 'Green Nick Air Shoes',
+                    title: product.title,
                     smallsize: true,
                   ),
                   Row(
                     children: [
                       ProductBarndNameAndVerfiedIcon(
-                        brandName: 'Nick',
+                        brandName: product.brand?.name ?? '',
                         brandTextSize: TextSizes.small,
                       ),
                     ],
@@ -99,11 +111,21 @@ class ProductCardVertiacl extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Productprice(price: '35.0'),
-                ProductAddIcon(),
+                Flexible(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: CustomSizes.sm),
+                        child: Productprice(
+                            price: controller.getProductPrice(product)),
+                      ),
+                    ],
+                  ),
+                ),
+                const ProductAddIcon(),
               ],
             ),
           ],

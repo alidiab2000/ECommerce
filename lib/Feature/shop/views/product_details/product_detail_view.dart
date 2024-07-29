@@ -3,6 +3,7 @@ import 'package:e_commerce/core/utils/common/routes/app_router.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
+import '../../models/product_model/product_model.dart';
 import 'widgets/Product_meta_Data.dart';
 import 'widgets/bottom_add_to_cart.dart';
 import 'widgets/product_title_text.dart';
@@ -18,15 +19,19 @@ import 'widgets/rating_and_share.dart';
 
 class ProductDetailView extends StatelessWidget {
   const ProductDetailView({super.key});
-
+ 
   @override
   Widget build(BuildContext context) {
+     final ProductModel product = Get.arguments as ProductModel;
+     
     // final darkMode = HelperFunctions.isDarkMode(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const ProductImageSlider(),
+              ProductImageSlider(
+              images: product.images!
+            ),
             Padding(
               padding: const EdgeInsets.only(
                   right: CustomSizes.defaultSpace,
@@ -80,8 +85,7 @@ class ProductDetailView extends StatelessWidget {
                   ),
                   const SizedBox(height: CustomSizes.spaceBtwSections),
                   const ReadMoreText(
-                    """
-                       This product description for blue Nike Sealve less ves 
+                    """This product description for blue Nike Sealve less ves 
                        This product description for blue Nike Sealve less ves
                        This product description for blue Nike Sealve less ves
                        """,
@@ -89,11 +93,16 @@ class ProductDetailView extends StatelessWidget {
                     trimMode: TrimMode.Line,
                     trimCollapsedText: "Show more",
                     trimExpandedText: "...Less",
-                    moreStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
-                    lessStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+                    moreStyle: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w800,
+                    ),
+                    lessStyle: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w800,
+                    ),
                   ),
+
                   const Divider(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

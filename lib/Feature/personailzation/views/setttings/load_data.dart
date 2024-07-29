@@ -7,6 +7,7 @@ import 'package:iconsax/iconsax.dart';
 import '../../../../core/utils/common/widgets/appbar/appbar.dart';
 import '../../../../core/utils/common/widgets/list_tile/setting_menu_tile.dart';
 import '../../../shop/controllers/banner_controller.dart/banner_controller.dart';
+import '../../../shop/controllers/product_controller/product_controller.dart';
 
 class LoadDataView extends StatelessWidget {
   const LoadDataView({super.key});
@@ -43,11 +44,14 @@ class LoadDataView extends StatelessWidget {
                 onTap: null,
                 trailing: Icon(Iconsax.document_upload),
               ),
-              const SettingMenuTile(
+              SettingMenuTile(
                 icon: Iconsax.shopping_bag,
                 title: "Upload Products",
-                onTap: null,
-                trailing: Icon(Iconsax.document_upload),
+                onTap: () async {
+                  final productsController = Get.put(ProductController());
+                  await productsController.uploadDummyData();
+                },
+                trailing: const Icon(Iconsax.document_upload),
               ),
               SettingMenuTile(
                 icon: Iconsax.camera,

@@ -31,28 +31,33 @@ class RoundedImage extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-          width: width,
-          height: height,
-          padding: padding,
-          decoration: BoxDecoration(
-            color: backgroundColor,
-            border: border,
-            borderRadius: applyBorderRadius
-                ? BorderRadius.circular(borderRadius)
-                : BorderRadius.zero,
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(20),
-            child: CachedNetworkImage(
-              width: width,
-              height: height,
-              imageUrl: image,
-              errorWidget: (context, url, error) => const Icon(
-                Icons.error_outline,
-                size: 18,
+        width: width,
+        height: height,
+        padding: padding,
+        decoration: BoxDecoration(
+          color: backgroundColor,
+          border: border,
+          borderRadius: applyBorderRadius
+              ? BorderRadius.circular(borderRadius)
+              : BorderRadius.zero,
+        ),
+        child: isNetworkImage
+            ? ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: CachedNetworkImage(
+                  width: width,
+                  height: height,
+                  imageUrl: image,
+                  errorWidget: (context, url, error) => const Icon(
+                    Icons.error_outline,
+                    size: 18,
+                  ),
+                ),
+              )
+            : Image(
+                image: AssetImage(image) as ImageProvider,
               ),
-            ),
-          )),
+      ),
     );
   }
 }

@@ -19,7 +19,7 @@ class Productprice extends StatelessWidget {
         maxLines: 1,
         style: isLagre
             ? Theme.of(context).textTheme.headlineSmall
-            : Theme.of(context).textTheme.titleMedium,
+            : Theme.of(context).textTheme.titleSmall,
       ),
     );
   }
