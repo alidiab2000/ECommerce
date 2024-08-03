@@ -79,6 +79,7 @@ class ProductModel {
     return ProductModel(
       id: document.id,
       price: double.parse((json['Price'] ?? 0.0).toString()),
+      brand: BrandModel.formJson(json['Brand']),
       title: json['Title'] ?? "",
       thumbnail: json['Thumbnail'] ?? "",
       productType: json['ProductType'] ?? "",
@@ -104,6 +105,7 @@ class ProductModel {
       id: document.id,
       price: double.parse((json['Price'] ?? 0.0).toString()),
       title: json['Title'] ?? "",
+      brand: BrandModel.formJson(json['Brand'] as Map<String, dynamic>),
       thumbnail: json['Thumbnail'] ?? "",
       productType: json['ProductType'] ?? "",
       isFeatured: json['IsFeatured'] ?? false,

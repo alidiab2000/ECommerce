@@ -154,49 +154,37 @@ class DummyData {
 
   static List<ProductModel> products = [
     ProductModel(
-        id: '001',
-        price: 100,
-        title: 'Green Nike sport shose',
-        date: DateTime.now(),
-        brand: BrandModel(
+      id: '001',
+      price: 100,
+      title: 'Green Nike sport shose',
+      date: DateTime.now(),
+      brand: BrandModel(
+          id: '1',
+          name: "Green Nick",
+          image: AppImages.nikeLogo,
+          isFeatured: true),
+      stock: 15,
+      salePrice: 80,
+      thumbnail: AppImages.productImage1,
+      productType: "sports",
+      isFeatured: true,
+      description: "Green Nike sport shose",
+      images: [
+        AppImages.productImage1,
+        AppImages.productImage23,
+        AppImages.productImage21,
+        AppImages.productImage9,
+      ],
+      sku: "ABR4568",
+      categoryId: "1",
+      productAttributes: [
+        ProductAttributeModel(name: "Color", values: ["Red", "Blue", "Green"]),
+        ProductAttributeModel(
+            name: "Size", values: ['EU 30', 'EU 31', 'EU 32']),
+      ],
+      productVariations: [
+        ProductVariationModel(
             id: '1',
-            name: "Green Nick",
-            image: AppImages.nikeLogo,
-            isFeatured: true),
-        stock: 15,
-        salePrice: 80,
-        thumbnail: AppImages.productImage1,
-        productType: "sports",
-        isFeatured: true,
-        description: "Green Nike sport shose",
-        images: [
-          AppImages.productImage1,
-          AppImages.productImage23,
-          AppImages.productImage21,
-          AppImages.productImage9,
-        ],
-        sku: "ABR4568",
-        categoryId: "1",
-        productAttributes: [
-          ProductAttributeModel(
-              name: "Color", values: ["Red", "Blue", "Green"]),
-          ProductAttributeModel(
-              name: "Size", values: ['EU 30', 'EU 31', 'EU 32']),
-        ],
-        productVariations: [
-          ProductVariationModel(
-              id: '1',
-              stock: 34,
-              price: 134,
-              salePrice: 100,
-              image: AppImages.productImage1,
-              description: "Green Nike sport shose",
-              attriubuteValue: {
-                "Color": "Red",
-                "Size": "EU 30",
-              }),
-          ProductVariationModel(
-            id: '2',
             stock: 34,
             price: 134,
             salePrice: 100,
@@ -205,8 +193,75 @@ class DummyData {
             attriubuteValue: {
               "Color": "Red",
               "Size": "EU 30",
-            },
-          ),
-        ])
+            }),
+        ProductVariationModel(
+          id: '2',
+          stock: 34,
+          price: 134,
+          salePrice: 100,
+          image: AppImages.productImage1,
+          description: "Green Nike sport shose",
+          attriubuteValue: {
+            "Color": "Red",
+            "Size": "EU 30",
+          },
+        ),
+      ],
+    ),
+    ProductModel(
+      id: '002',
+      price: 1200,
+      title: 'Iphone 12',
+      
+      date: DateTime.now(),
+      brand: BrandModel(
+        id: '2',
+        name: "Iphone",
+        image: AppImages.nikeLogo,
+        isFeatured: true,
+      ),
+      stock: 15,
+      salePrice: 800,
+      thumbnail: AppImages.productImage70,
+      productType: "Electronics",
+      isFeatured: true,
+      description: "Black iphone 12",
+      images: [
+        AppImages.productImage70,
+        AppImages.productImage71,
+        AppImages.productImage72,
+        AppImages.productImage73,
+        AppImages.productImage74,
+      ],
+      sku: "ABR500",
+      categoryId: "3",
+      productAttributes: [
+        ProductAttributeModel(
+            name: "Color", values: ["Red", "Blue", "White", "Black"]),
+      ],
+      productVariations: [
+        ProductVariationModel(
+            id: '1',
+            stock: 34,
+            price: 1200,
+            salePrice: 800,
+            image: AppImages.productImage70,
+            description: "Iphone 12",
+            attriubuteValue: {
+              "Color": "Red",
+            }),
+        ProductVariationModel(
+          id: '3',
+          stock: 34,
+          price: 1200,
+          salePrice: 800,
+          image: AppImages.productImage70,
+          description: "Iphone 12",
+          attriubuteValue: {
+            "Color": "Red",
+          },
+        ),
+      ],
+    ),
   ];
 }

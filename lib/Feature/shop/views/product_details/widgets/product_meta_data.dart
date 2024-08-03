@@ -1,21 +1,31 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:e_commerce/Feature/shop/controllers/product_controller/product_controller.dart';
+import 'package:flutter/material.dart';
+
 import '../../../../../core/utils/common/widgets/text/offer_text.dart';
 import '../../../../../core/utils/common/widgets/text/product_price.dart';
 import '../../../../../core/utils/constants/sizes.dart';
-import 'package:flutter/material.dart';
-  
-class ProductMetaData extends StatelessWidget {
-  const ProductMetaData({super.key});
+import '../../../models/product_model/product_model.dart';
 
+class ProductMetaData extends StatelessWidget {
+  const ProductMetaData({
+    super.key,
+    required this.product,
+  });
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
+    final controller = ProductController.instance;
     return Row(
       children: [
-        const OfferText(offer: '25'),
+        OfferText(
+            offer: controller.calculateSalesPercentage(
+                product.price, product.salePrice)!),
         const SizedBox(
           width: CustomSizes.spaceBtwItems,
         ),
         Text(
-          "\$200",
+          "\$${product.price}",
           style: Theme.of(context)
               .textTheme
               .titleSmall!
@@ -24,8 +34,8 @@ class ProductMetaData extends StatelessWidget {
         const SizedBox(
           width: CustomSizes.spaceBtwItems,
         ),
-        const Productprice(
-          price: '150',
+        Productprice(
+          price: product.salePrice.toString(),
           isLagre: true,
         ),
         const SizedBox(

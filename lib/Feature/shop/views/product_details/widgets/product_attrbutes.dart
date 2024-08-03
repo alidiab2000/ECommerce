@@ -1,18 +1,23 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:e_commerce/Feature/shop/controllers/product_controller/product_controller.dart';
 import 'package:flutter/material.dart';
+
+import 'package:e_commerce/Feature/shop/models/product_model/product_model.dart';
 
 import '../../../../../core/utils/common/widgets/chips/cusotm_choice_chip.dart';
 import '../../../../../core/utils/common/widgets/containers/round_container.dart';
 import '../../../../../core/utils/common/widgets/text/product_price.dart';
+import '../../../../../core/utils/common/widgets/text/section_heading.dart';
 import '../../../../../core/utils/constants/colors.dart';
 import '../../../../../core/utils/constants/sizes.dart';
-import '../../../../../core/utils/common/widgets/text/section_heading.dart';
 import 'product_title_text.dart';
 
 class ProductAttributes extends StatelessWidget {
   const ProductAttributes({
     super.key,
+    required this.product,
   });
-
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,13 +40,13 @@ class ProductAttributes extends StatelessWidget {
                           const ProductTitleText(
                               title: 'Price : ', samllSize: true),
                           Text(
-                            '\$25',
+                            '\$${product.price}',
                             style: Theme.of(context)
                                 .textTheme
                                 .titleSmall!
                                 .apply(decoration: TextDecoration.lineThrough),
                           ),
-                          const Productprice(price: '20'),
+                          Productprice(price: product.salePrice.toString()),
                         ],
                       ),
                       Row(
@@ -49,7 +54,7 @@ class ProductAttributes extends StatelessWidget {
                           const ProductTitleText(
                               title: 'Stock : ', samllSize: true),
                           Text(
-                            'In Stock',
+                            ProductController.instance.getStockStatus(product),
                             style: Theme.of(context).textTheme.titleMedium,
                           ),
                         ],
@@ -58,9 +63,8 @@ class ProductAttributes extends StatelessWidget {
                   )
                 ],
               ),
-              const ProductTitleText(
-                title:
-                    "This is Description of product and it can up to max 4 lines",
+              ProductTitleText(
+                title: product.description!,
                 samllSize: true,
                 maxLines: 4,
               ),

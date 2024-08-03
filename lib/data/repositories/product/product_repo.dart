@@ -24,7 +24,18 @@ class ProductRepo extends GetxController {
   Future<void> uploadDummyData(List<ProductModel> products) async {
     try {
       final storage = Get.put(FirebaseStorageServices());
+      for (var product in products) {
+        if (product.brand != null) {
+          final brandImage =
+              await storage.getImageFromAssets(path: product.brand!.image);
+          final url = await storage.uploadImageData(
+              path: 'Products/Image',
+              image: brandImage,
+              name: product.brand!.image.toString());
 
+          product.brand!.image = url;
+        }
+      }
       for (var product in products) {
         final thumbnail =
             await storage.getImageFromAssets(path: product.thumbnail);

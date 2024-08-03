@@ -50,6 +50,7 @@ class LoadDataView extends StatelessWidget {
                 onTap: () async {
                   final productsController = Get.put(ProductController());
                   await productsController.uploadDummyData();
+                  productsController.featuredProducts();
                 },
                 trailing: const Icon(Iconsax.document_upload),
               ),

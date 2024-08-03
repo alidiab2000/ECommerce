@@ -1,3 +1,5 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/common/widgets/appbar/appbar.dart';
@@ -7,11 +9,17 @@ import '../../../../../core/utils/constants/colors.dart';
 import '../../../../../core/utils/constants/image_strings.dart';
 import '../../../../../core/utils/constants/sizes.dart';
 import '../../../../../core/utils/helpers/helper_functions.dart';
+import '../../../models/product_model/product_model.dart';
 import '../../home/widgets/rounded_image.dart';
 
 class ProductImageSlider extends StatelessWidget {
-  const ProductImageSlider({super.key, required this.images});
+  const ProductImageSlider({
+    super.key,
+    required this.images,
+    required this.product,
+  });
   final List<String> images;
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
     final darkMode = HelperFunctions.isDarkMode(context);
@@ -25,8 +33,11 @@ class ProductImageSlider extends StatelessWidget {
               height: 400,
               child: Padding(
                 padding: const EdgeInsets.all(CustomSizes.defaultSpace),
-                child: Image.asset(
-                  AppImages.productImage1,
+                child: CachedNetworkImage(
+                  imageUrl: product.thumbnail,
+                  placeholder: (context, url) =>
+                      const Center(child: CircularProgressIndicator()),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
             ),
