@@ -74,7 +74,7 @@ class ProductAttributes extends StatelessWidget {
         Column(
           children: [
             const SizedBox(height: CustomSizes.spaceBtwSections),
-            const SectionHeading(title: "Colors"),
+            const SectionHeading(title: "Color"),
             Wrap(
               spacing: 10,
               children: [
